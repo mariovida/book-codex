@@ -1,6 +1,6 @@
 <template>
-  <div id="home" class="home">
-    <div class="header">
+  <div class="home">
+    <section class="header">
       <div class="login-box">
         <h2>Prijava</h2>
         <form method="POST" class="login_form" action="">
@@ -16,12 +16,12 @@
         </form>
         <p>Nemaš račun? <router-link to="/registracija" target="self">Registriraj se</router-link></p>
       </div> 
-    </div>
+    </section>
     
-    <main>
+    <section>
       <div class="wrapper">
       </div>
-    </main>
+    </section>
   </div>
 </template>
 

@@ -40,7 +40,7 @@ body::-webkit-scrollbar {
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
 }
 .login-box h2 {
-    font-size: 1.7vw;
+    font-size: 2rem;
     margin-bottom: 25px;
 }
 .login-box .user-box {
@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
 .login-box .user-box input {
     width: 100%;
     padding: 10px 0;
-    font-size: 1vw;
+    font-size: 1.2rem;
     color: #E6E6E6;
     margin-bottom: 25px;
     border: none;
@@ -62,23 +62,23 @@ body::-webkit-scrollbar {
     top: 0;
     left: 0;
     padding: 8px 0;
-    font-size: 1vw;
+    font-size: 1.2rem;
     color: #E6E6E6;
     pointer-events: none;
-    transition: .5s;
+    transition: 0.5s;
 }  
 .login-box .user-box input:focus ~ label, .login-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: #E6E6E6;
-    font-size: 12px;
+    font-size: 0.8rem;
 }  
 .login-box form .login {
     width: 100%;
     padding: 10px 20px;
     color: #404040;
     background-color: #E6E6E6;
-    font-size: 1vw;
+    font-size: 1.2rem;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
@@ -93,7 +93,7 @@ body::-webkit-scrollbar {
 }
 .login-box p, .login-box a {
     display: inline-block;
-    font-size: 0.8vw;
+    font-size: 1rem;
     font-weight: 400;
     text-decoration: none;
     color: #E6E6E6;
