@@ -1,5 +1,13 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import AboutView from "../views/AboutView.vue";
+import DepartmentsView from "../views/DepartmentsView.vue";
+import ProgramsView from "../views/ProgramsView.vue";
+import CatalogView from "../views/CatalogView.vue";
+import LoginView from "../views/LoginView.vue";
+import RegisterView from "../views/RegisterView.vue";
+import ProfileView from "../views/ProfileView.vue";
+import { auth } from '@/firebase';
 
 const routes = [
   {
@@ -10,47 +18,64 @@ const routes = [
   {
     path: '/o-nama',
     name: 'O nama - Knjižnica Codex',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: AboutView
   },
   {
     path: '/odjeli',
     name: 'Odjeli - Knjižnica Codex',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/DepartmentsView.vue')
+    component: DepartmentsView
   },
   {
     path: '/programi',
     name: 'Programi - Knjižnica Codex',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ProgramsView.vue')
+    component: ProgramsView
   },
   {
     path: '/katalog',
     name: 'Katalog - Knjižnica Codex',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/CatalogView.vue')
+    component: CatalogView,
+    // meta: {
+    //   requiresAuth: true
+    // }
+  },
+  {
+    path: '/profil',
+    name: 'Profil - Knjižnica Codex',
+    component: ProfileView,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/registracija',
     name: 'Registracija - Knjižnica Codex',
-    component: () => import(/* webpackChunkName: "about" */ '../views/RegisterView.vue')
+    component: RegisterView
   },
-]
+  {
+    path: '/prijava',
+    name: 'Prijava - Knjižnica Codex',
+    component: LoginView
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 });
 
 router.beforeEach((to, from, next) => {
+  if (to.path === '/prijava' && auth.currentUser) {
+    next('/')
+    return;
+  }
+
+  if (to.matched.some(record => record.meta.requiresAuth) && !auth.currentUser) {
+    next('/prijava')
+    return;
+  }
+
   document.title = to.name;
   next();
-});
+})
 
-export default router
+export default router;

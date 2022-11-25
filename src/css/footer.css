@@ -1,0 +1,12 @@
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    margin-top: 60px;
+    background-color: #C14E2E;
+}
+.footer .wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 30px 1rem;
+}

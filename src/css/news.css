@@ -1,0 +1,11 @@
+.news {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 60px;
+    font-size: 1.2rem;
+    color: #333;
+}
+.news p {
+    margin-bottom: 30px;
+}
