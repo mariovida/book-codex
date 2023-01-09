@@ -25,7 +25,7 @@ export default {
   
   created() {
      this.id = this.$route.params.id;
-    axios.get('/test.json')
+    axios.get('/books.json')
       .then(response => {
         this.items = response.data;
       });
