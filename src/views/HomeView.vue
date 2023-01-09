@@ -13,7 +13,7 @@
     </div>
   </section>
 
-  <section class="top-books">
+  <section class="top-books" data-aos="fade-up" data-aos-duration="700">
     <div class="wrapper">
       <swiper 
         :slidesPerView="1"
