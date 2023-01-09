@@ -2,7 +2,7 @@
     position: relative;
     max-width: 1920px;
     margin: 0 auto;
-    margin-top: -50px;
+    margin-top: -60px;
     font-size: 1.2rem;
     color: #333;
 }
@@ -46,4 +46,31 @@
     color: #C14E2E;
     background-color: #E6E6E6;
     border-radius: 18px;
+}
+
+@media screen and (max-width: 1280px) {
+    .top-books .swiper {
+        padding: 20px 0px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .top-books {
+        font-size: 0.9rem;
+    }
+    .top-books .swiper {
+        height: 220px;
+    }
+    .book-cover {
+        height: 160px;
+    }
+    .book-cover img {
+        margin: 0 10px;
+    }
+    .book-info p {
+        font-size: 0.8rem;
+    }
+    .book-info a {
+        width: 120px;
+        font-size: 0.8rem;
+    }
 }

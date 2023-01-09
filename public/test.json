@@ -1,0 +1,19 @@
+[{
+  "id": 1,
+  "url": "still-life",
+  "name": "Still Life",
+  "author": "Sarah Winman",
+  "desc": "nešto o ovoj knjizi. napisala ju je sarah wilman"
+}, {
+  "id": 2,
+  "url": "passage-north",
+  "name": "Passage North",
+  "author": "Anuk Arudpragasam",
+  "desc": "nešto o ovoj knjizi. napisala/napisao ju je ovaj gore lik"
+}, {
+  "id": 3,
+  "url": "harry-potter-i-kamen-mudraca",
+  "name": "Harry Potter i kamen mudraca",
+  "author": "J.K. Rowling",
+  "desc": "JAAAAKO SLAVNA KNJIGA!! i vrlo dobra..."
+}]

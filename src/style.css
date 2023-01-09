@@ -27,7 +27,6 @@ body::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
 }
 #app {
-    position: relative;
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -81,11 +80,18 @@ nav a.router-link-exact-active {
     max-width: 1920px;
     margin: 0 1rem;
 }
+.wrapper-text {
+    width: 50%;
+    margin: 0 auto;
+}
+p {
+    font-size: 1rem;
+}
 h1 {
     font-size: 3.5rem;
     line-height: 4rem;
     color: #333;
-    margin-bottom: 12px;
+    margin-bottom: 28px;
 }
 h1::before {
     display: inline-block;
@@ -102,8 +108,59 @@ h2 {
 }
 
 @media screen and (max-width: 1920px) {
+    nav {
+        width: 90%;
+        margin: 0 auto;
+    }
     .wrapper {
         width: 90%;
         margin: 0 auto;
+    }
+}
+@media screen and (max-width: 1280px) {
+    h1 {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+    }
+}
+@media screen and (max-width: 960px) {
+    nav a {
+        display: none;
+    }
+    nav a:first-of-type {
+        display: block;
+    }
+    h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        margin-bottom: 12px;
+    }
+    h1::before {
+        width: 2rem;
+        transform: translateY(-0.8rem);
+    }
+    h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+@media screen and (max-width: 760px) {
+    p {
+        font-size: 0.9rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+    h1::before {
+        display: none;
+    }
+    h2 {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
     }
 }

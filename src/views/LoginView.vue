@@ -6,11 +6,11 @@
           <form class="login_form" @submit.prevent="login">
             <input 
               type="email" 
-              placeholder="Email address"
+              placeholder="E-mail adresa"
               v-model="login_form.email" />
             <input 
               type="password" 
-              placeholder="Password" 
+              placeholder="Lozinka" 
               v-model="login_form.password" />
             <input 
               type="submit" 

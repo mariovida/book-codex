@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.4);
     z-index: 0;
 }
 .home_hero h1 {
@@ -50,13 +50,13 @@
     color: #E6E6E6;
 }
 .login_box a.login-btn {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     text-align: center;
     letter-spacing: 1px;
-    padding: 8px;
+    padding: 8px 80px;
     margin-bottom: 12px;
     background-color: #C14E2E;
     color: #E6E6E6;
@@ -65,4 +65,21 @@
 }
 .login_box a.login-btn:hover {
     background-color: #cf5330;
+}
+
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 960px) {
+    .login_box a.login-btn {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 760px) {
+    .home_hero {
+        height: 380px;
+    }
+    .login_box a.login-btn {
+        font-size: 1rem;
+        padding: 6px 42px;
+    }
 }

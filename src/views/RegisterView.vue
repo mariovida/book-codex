@@ -7,19 +7,23 @@
                 <input 
                     type="text" 
                     placeholder="Name"
-                    v-model="register_form.name" />
+                    v-model="register_form.name"
+                    required />
                 <input 
                     type="email" 
                     placeholder="Email address"
-                    v-model="register_form.email" />
+                    v-model="register_form.email"
+                    required />
                 <input 
                     type="password" 
                     placeholder="Password" 
-                    v-model="register_form.password" />
+                    v-model="register_form.password"
+                    required />
                 <input 
                     type="submit" 
                     value="Register" />
             </form>
+            <p v-if="$store.state.error">{{ $store.state.error }}</p>
         </div>
     </section>
 </template>

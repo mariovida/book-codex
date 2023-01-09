@@ -15,7 +15,16 @@ export default createStore({
     },
     CLEAR_USER (state) {
       state.user = null
-    }
+    },
+    SET_USED_MAIL_ERROR (state) {
+      state.error = "Unesena e-mail adresa se već koristi!";
+    },
+    SET_INVALID_MAIL_ERROR (state) {
+      state.error = "Neispravna e-mail adresa!";
+    },
+    SET_WEAK_PASS_ERROR (state) {
+      state.error = "Slaba lozinka!";
+    },
   },
   actions: {
     async login ({ commit }, details) {
@@ -55,13 +64,16 @@ export default createStore({
       } catch (error) {
         switch(error.code) {
           case 'auth/email-already-in-use':
-            alert("Email already in use!")
+            // alert("Unesena e-mail adresa se već koristi!")
+            commit('SET_USED_MAIL_ERROR')
             break
           case 'auth/invalid-email':
-            alert("Invalid email!")
+            //alert("Neispravna e-mail adresa!")
+            commit('SET_INVALID_MAIL_ERROR')
             break
           case 'auth/weak-password':
-            alert("Weak password!")
+            //alert("Slaba lozinka!")
+            commit('SET_WEAK_PASS_ERROR')
             break
           default:
             alert("Something went wrong!")
@@ -70,8 +82,9 @@ export default createStore({
         return
       }
 
-      commit('SET_USER', auth.currentUser)
-      router.push('/profil')
+      //commit('SET_USER', auth.currentUser)
+      commit('CLEAR_USER')
+      router.push('/')
     },
     async logout ({ commit }) {
       await signOut(auth)
