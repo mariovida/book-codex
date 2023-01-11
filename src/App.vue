@@ -1,7 +1,7 @@
 <!-- eslint-disable prettier/prettier -->
 <!-- v-if="!$store.state.user" -->
 <template>
-  <nav id="app">
+  <nav id="app" v-bind:class="{ 'nav-color': $route.path != '/' }">
     <router-link to="/" class="nav_logo"><img src="@/assets/logo_v1.svg" /></router-link>
     <router-link to="/">Naslovnica</router-link>
     <router-link to="/o-nama">O nama</router-link>
@@ -26,6 +26,11 @@
       onBeforeMount(() => {
         store.dispatch('fetchUser')
       })
+    },
+    computed: {
+      currentRouteName() {
+        return this.$route.name;
+      }
     }
   }
 </script>

@@ -25,6 +25,12 @@ export default createStore({
     SET_WEAK_PASS_ERROR (state) {
       state.error = "Slaba lozinka!";
     },
+    NO_USER_ERROR (state) {
+      state.error = "Kriva e-mail adresa ili lozinka.";
+    },
+    PASSWORD_ERROR (state) {
+      state.error = "Kriva e-mail adresa ili lozinka.";
+    },
   },
   actions: {
     async login ({ commit }, details) {
@@ -35,10 +41,12 @@ export default createStore({
       } catch (error) {
         switch(error.code) {
           case 'auth/user-not-found':
-            alert("User not found")
+            //alert("User not found")
+            commit('NO_USER_ERROR')
             break
           case 'auth/wrong-password':
-            alert("Wrong password")
+            //alert("Wrong password")
+            commit('PASSWORD_ERROR')
             break
           default:
             alert("Something went wrong")

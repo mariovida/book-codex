@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import DepartmentsView from "../views/DepartmentsView.vue";
+import DepartmentView from "../views/DepartmentView.vue";
 import ProgramsView from "../views/ProgramsView.vue";
 import CatalogView from "../views/CatalogView.vue";
 import LoginView from "../views/LoginView.vue";
@@ -27,6 +28,11 @@ const routes = [
     component: DepartmentsView
   },
   {
+    path: '/odjeli/:id',
+    name: '',
+    component: DepartmentView
+  },
+  {
     path: '/programi',
     name: 'Programi - Knjižnica Codex',
     component: ProgramsView
@@ -35,9 +41,6 @@ const routes = [
     path: '/katalog',
     name: 'Katalog - Knjižnica Codex',
     component: CatalogView,
-    // meta: {
-    //   requiresAuth: true
-    // }
   },
   {
     path: '/profil',

@@ -3,17 +3,39 @@
   "url": "still-life",
   "name": "Still Life",
   "author": "Sarah Winman",
-  "desc": "nešto o ovoj knjizi. napisala ju je sarah wilman"
+  "uvez": "Meki uvez",
+  "izdavac": "",
+  "jezik": "Engleski jezik",
+  "isbn": "9780008283391",
+  "desc": "From the author of When God was a Rabbit and Tin Man, Still Life is a big-hearted story of the families we forge and the friendships that make us. 1944, Italy. As bombs fall around them, two strangers meet in the ruined wine cellar of a Tuscan villa and share an extraordinary evening. Ulysses Temper is a young British soldier, Evelyn Skinner a 64-year-old art historian living life on her own terms. She has come to salvage paintings from the wreckage of war and relive memories of her youth when her heart was stolen by an Italian maid in a particular room with a view. Ulysses' chance encounter with Evelyn will transform his life - and all those who love him back home in London - forever. Uplifting, sweeping and full of unforgettable characters, Still Life is a novel about beauty, love, family and friendship."
 }, {
   "id": 2,
   "url": "passage-north",
   "name": "Passage North",
   "author": "Anuk Arudpragasam",
-  "desc": "nešto o ovoj knjizi. napisala/napisao ju je ovaj gore lik"
+  "uvez": "Tvrdi uvez",
+  "izdavac": "",
+  "jezik": "Engleski jezik",
+  "isbn": "9781783786947",
+  "desc": "It begins with a message: a telephone call informing Krishan that his grandmother's former care-giver, Rani, has died in unexpected circumstances, at the bottom of a well in her village in the north, her neck broken by the fall. The news arrives on the heels of an email from Anjum, an activist he fell in love with four years earlier while living in Delhi, bringing with it the stirring of distant memories and desires. As Krishan makes the long journey by train from Colombo into the war-torn Northern Province for the funeral, so begins a passage into the soul of an island devastated by violence. Written with precision and grace, A Passage North is a poignant memorial for the missing and the dead, and a luminous meditation on time, consciousness, and the lasting imprint of the connections we make with others."
 }, {
   "id": 3,
   "url": "harry-potter-i-kamen-mudraca",
   "name": "Harry Potter i kamen mudraca",
   "author": "J.K. Rowling",
-  "desc": "JAAAAKO SLAVNA KNJIGA!! i vrlo dobra..."
+  "uvez": "Tvrdi uvez",
+  "izdavac": "Mozaik knjiga d.o.o.",
+  "jezik": "Hrvatski jezik",
+  "isbn": "9789531433334",
+  "desc": "Najpoznatiji svjetski čarobnjak vraća se u Hrvatsku! Priča o Harryju Potteru obilježila je i oblikovala brojne generacije, a sad se konačno vraća u novom izdanju, i to baš na 25. obljetnicu nastanka. Vjerni fanovi moći će ponovo uroniti u magični svijet, a ljubav prema ovom neponovljivom kultnom klasiku s njima će sad dijeliti i novi naraštaji. Pođite stoga na putovanje u čudesan svijet čarobnjaštva i zavirite u prvi dio ovog serijala, Harry Potter i Kamen mudraca. Harry je naizgled sasvim običan dječak s tragičnom životnom pričom, a život mu se u potpunosti preokrene kad mu krenu pristizati neobična pisma koja njegovi skrbnici očajnički pokušavaju zataškati. Zakoračite zajedno s njim u Hogwarts, najpoznatiju školu vještičarenja i čarobnjaštva, pripremite čarobne štapiće i upoznajte svijet magije."
+}, {
+  "id": 4,
+  "url": "glukozna-revolucija",
+  "name": "Glukozna revolucija",
+  "author": "Jessie Inchauspé",
+  "uvez": "Meki uvez",
+  "izdavac": "Koncept izdavaštvo j.d.o.o.",
+  "jezik": "Hrvatski jezik",
+  "isbn": "9789538326394",
+  "desc": "Uravnotežite razinu šećera u krvi i time steknite moć kojom ćete svoj život zauvijek promijeniti nabolje Francuska biokemičarka, autorica bestselera i utemeljiteljica pokreta Glucose Goddess, stotinama je tisuća ljudi pomogla da unaprijede zdravlje učinivši najnovije znanstvene podatke dostupnima. Devedeset posto osoba među nama pati zbog prevelike količine glukoze u svom organizmu – a većinom toga nismo svjesni. Simptomi? Žudnja za slatkim, iscrpljenost, neplodnost, akne, bore… I, s vremenom, dijabetes tipa 2, rak i demencija. Služeći se najnovijim znanstvenim podacima i vlastitim pionirskim istraživanjem, Jessie Inchauspé nudi jednostavne savjete s pomoću kojih možete ublažiti svoje simptome – a da ne morate na dijetu ili se odricati hrane koju volite. U knjizi ćete, između ostaloga, naučiti: kako će objedovanje hrane ispravnim redoslijedom pomoći da bez previše truda smršavite, koji će tajni sastojak pomoći da pojedete desert a da se pritom ipak ubacite u stanje za sagorijevanje masnoća, koje će male promjene u odabiru namirnica za doručak otključati zalihe energije i pomoći da suzbijete žudnju za slatkim."
 }]

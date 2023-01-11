@@ -7,10 +7,13 @@
     font-size: 1.2rem;
     color: #333;
 }
+.about p {
+    margin-bottom: 8px;
+}
 .about .swiper {
     width: 100%;
     height: 600px;
-    margin-top: 40px;
+    margin: 40px 0 60px;
 }
 .about .swiper-slide {
     display: flex;
@@ -22,4 +25,28 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.about-hours {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /*background-color: #C14E2E;*/
+    color: #C14E2E;
+    padding: 8px 18px;
+    margin-bottom: 40px;
+    border-left: 5px solid #C14E2E;
+}
+.about-hours h2 {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+@media screen and (max-width: 960px) {
+    .about {
+        padding-top: 30px;
+    }
+    .about .swiper {
+        height: 200px;
+        margin: 30px 0 40px;
+    }
 }

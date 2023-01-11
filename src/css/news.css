@@ -9,3 +9,9 @@
 .news p {
     margin-bottom: 30px;
 }
+
+@media screen and (max-width: 960px) {
+    .news {
+        padding-top: 30px;
+    }
+}
