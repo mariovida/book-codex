@@ -60,7 +60,7 @@ nav a.router-link-exact-active {
     nav {
         position: sticky;
         top: 0;
-        width: 100%;
+        width: 100% !important;
         height: 56px;
         margin: 0;
         z-index: 2;
