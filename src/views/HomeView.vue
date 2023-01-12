@@ -81,7 +81,7 @@
             <a href="knjiga/harry-potter-i-kamen-mudraca">SAZNAJ VIŠE</a>
           </div>
         </swiper-slide>
-        <swiper-slide>
+        <swiper-slide href="#">
           <div class="book-cover">
             <img src="@/assets/book_covers/9789538326394.jpg" />
           </div>

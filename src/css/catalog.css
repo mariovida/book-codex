@@ -1,0 +1,222 @@
+.catalog, .catalog-items {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 60px;
+    font-size: 1.2rem;
+    color: #333;
+}
+.catalog h3 {
+    margin-top: 20px;
+}
+.catalog p {
+    margin-bottom: 8px;
+}
+.catalog .swiper {
+    width: 100%;
+    height: 600px;
+    margin: 40px 0 60px;
+}
+.catalog .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.catalog .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.catalog-info {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    margin: 0;
+    background-color: #C14E2E;
+}
+.catalog-cat {
+    display: flex;
+    justify-content: left;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding: 20px 1rem;
+    /*border-top: 2px solid #C14E2E;*/
+    border-bottom: 2px solid #C14E2E;
+}
+.catalog-cat button {
+    padding: 6px 8px;
+    border: 1px solid #C14E2E;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.catalog-cat button:hover {
+    background-color: #C14E2E;
+}
+.catalog-cat input {
+    width: 200px;
+    position: absolute;
+    right: 2rem;
+    padding: 7px 8px;
+    border: 1px solid #C14E2E;
+    background-color: transparent;
+    font-size: 14px;
+    transition: width 0.3s;
+}
+.catalog-cat input:focus {
+    width: 280px;
+    outline: 0;
+}
+ /* CATALOG ITEMS */
+.catalog-items {
+    display: grid;
+    grid-template-columns: repeat(4, 22%);
+    grid-auto-rows: minmax(240px, 280px);
+    gap: 4%;
+    padding: 20px 1rem;
+}
+.category {
+    max-width: 1920px;
+    width: 90%;
+    font-weight: 600;
+    padding-left: 1rem;
+    color: #C14E2E;
+}
+.catalog-items p {
+    color: #C14E2E !important;
+}
+.catalog-item {
+    display: flex;
+    height: 260px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.catalog-item:hover {
+    /*transform: translateY(-12px);*/
+    transform: scale(1.05) !important;
+}
+.catalog-item:hover > img {
+    box-shadow: rgba(0, 0, 0, 0.35) 3px 8px 15px;
+}
+.catalog-item img {
+    position: relative;
+    top: 5%;
+    margin-right: 20px;
+    width: auto;
+    height: 90%;
+    object-fit: contain;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.3s;
+}
+.catalog-item-info {
+    position: relative;
+    top: 10%;
+    height: 80%;
+}
+.catalog-item-info h3 {
+    font-size: 24px;
+    line-height: 26px;
+    color: #333;
+    margin-bottom: 0;
+}
+.catalog-item-info p {
+    margin-top: 8px;
+}
+.catalog-item-info a {
+    position: absolute;
+    bottom: 0;
+    width: 130px;
+    display: block;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 4px 0;
+    color: #E6E6E6 !important;
+    background-color: #C14E2E;
+    border-radius: 18px;
+}
+
+/* NO RESULT */
+.no-books {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: center;
+}
+.no-books h3 {
+    margin-top: 50px;
+    font-size: 2.5rem;
+    color: #C14E2E;
+} 
+.no-books p {
+    font-size: 1.3rem;
+    margin-top: 20px;
+} 
+
+/* LOAD MORE */
+.load-more {
+    display: none;
+    bottom: 0;
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 30px;
+}
+
+@media screen and (max-width: 1920px) {
+    .catalog-cat input {
+        right: 6%;
+    }
+    .catalog-items {
+        grid-template-rows: 220px;
+    }
+    .catalog-item {
+        height: 220px;
+    }
+    .catalog-item-info h3 {
+        font-size: 20px;
+    }
+    .catalog-item-info p {
+       font-size: 14px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .catalog-items {
+        grid-template-columns: repeat(3, 30.66%);
+    }
+}
+@media screen and (max-width: 960px) {
+    .catalog-items {
+        grid-template-columns: repeat(2, 49%);
+        gap: 2%;
+    }
+    .catalog-cat {
+        display: grid;
+        grid-template-columns: repeat(2, 49%);
+    }
+    .catalog-cat input {
+        width: 100%;
+        position: relative;
+        right: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .catalog-items {
+        grid-template-columns: repeat(1, 100%);
+        gap: 0;
+        padding-top: 0;
+    }
+}
+
+.star {
+    width: 16px;
+    transform: scale(0.8);
+    color: #BFBFBF;
+}
+.star.filled {
+    color: #C14E2E;
+}

@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section class="about" data-aos="fade-up" data-aos-duration="600">
     <div class="wrapper">
       <h1>O nama</h1>
 
@@ -29,6 +29,9 @@
         <p>Knjižnica služi zadovoljavanju kulturnih potreba stanovništva, poticanju cjeloživotnog obrazovanja, stručnog i znanstvenog rada, informiranja, odlučivanja i demokratizacije društva općenito. Knjižnica je središnje mjesto za pružanje brzih i kvalitetnih informacija te gradsko sastajalište koje nudi brojne sadržaje za sve dobne skupine, od beba do umirovljenika. Knjižnica Codex pridonosi razvoju kulturnog, gospodarskog i društvenog života našeg grada i županije.</p>
         <p>Knjižnica usluge pruža svojim članovima. O učlanjenju vidjeti više u rubrici Usluge.</p>
         <p>Korisnik koji nije zadovoljan javnom uslugom može svoje primjedbe i žalbe na rad Knjižnice uputiti pisanim putem: mailom na adresu elektroničke pošte: <a href="mailto:codex@gkcodex.hr">codex@gkcodex.hr</a> ili upisom u Knjigu žalbi i primjedbi koja je dostupna na Informativno-posudbenom pultu Odjela za odrasle.</p>
+
+        <h2 class="mt-3 mb-1">Učlanjenje</h2>
+         <p>Ispunite formu u nastavku s traženim podacima i javit ćemo Vam se u s povratnom informacijom o Vašoj prijavi za učlanjenjem.</p>
       </div>
     </div>
   </section>

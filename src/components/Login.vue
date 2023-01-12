@@ -33,14 +33,6 @@
                 </div>
             </div>
         </Transition>
-
-      <div class="wrapper">
-          <h1>Prijava</h1>
-          <h2></h2>
-          
-      </div>
-
-      
   </section>
 </template>
 

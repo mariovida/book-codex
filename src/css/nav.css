@@ -12,13 +12,6 @@ nav img {
     height: 100%;
     margin-left: 1rem;
 }
-.nav-color {
-    /*background-color: #C14E2E;*/
-    max-width: 100vw !important;
-}
-.nav-color a {
-    /*color: #E6E6E6 !important;*/
-}
 .nav-right {
     display: flex;
     width: 80vw;
@@ -53,6 +46,11 @@ nav a.router-link-exact-active {
 }
 
 @media screen and (max-width: 1280px) {
+    nav img {
+        top: 10%;
+        height: 80%;
+        margin-left: 1rem;
+    }
     nav a {
         font-size: 1rem;
         padding: 9px 6px 0 6px;
