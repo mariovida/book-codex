@@ -207,6 +207,7 @@
 @media screen and (max-width: 768px) {
     .catalog-items {
         grid-template-columns: repeat(1, 100%);
+        grid-auto-rows: auto;
         gap: 0;
         padding-top: 0;
     }
