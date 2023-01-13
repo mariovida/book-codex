@@ -1,0 +1,15 @@
+.programs {
+    position: relative;
+    max-width: 1920px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: 60px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+@media screen and (max-width: 960px) {
+    .programs {
+        padding-top: 30px;
+    }
+}

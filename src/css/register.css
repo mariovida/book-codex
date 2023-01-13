@@ -1,8 +1,73 @@
 .register {
-    position: relative;
-    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 45vw;
+    height: 100%;
     margin: 0 auto;
-    padding-top: 60px;
     font-size: 1.2rem;
     color: #333;
+}
+.register h1::before {
+    display: none;
+}
+.register-info {
+    font-size: 1.2rem;
+    margin-bottom: 46px;
+}
+#register-image {
+    position: fixed;
+    top: 75px;
+    right: 0;
+    width: 55vw;
+    height: 100vh;
+    /*transform: skew(-10deg);*/
+    background-image: url('@/assets/register-img.jpg');
+    background-size: cover;
+    background-position: left;
+}
+.register input {
+    width: 220px;
+    display:block;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    background-color: transparent;
+    border: 1px solid #C14E2E;
+}
+.register input:focus {
+    outline: 0;
+}
+.register input[type="submit"] {
+    background-color: #C14E2E;
+    color: #E6E6E6;
+    cursor: pointer;
+}
+.register input[type="submit"]:hover {}
+
+@media screen and (max-width: 960px) {
+    .register {
+        position: relative;
+        top: 250px;
+        width: 100vw;
+        padding-top: 30px;
+    }
+    .register h1 {
+        font-size: 1.5rem;
+    }
+    .register-info {
+        font-size: 0.9rem;
+        margin-bottom: 36px;
+    }
+    #register-image {
+        top: 56px;
+        width: 100vw;
+        height: 250px;
+    }
+    .register input {
+        width: 100%;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
 }

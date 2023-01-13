@@ -67,6 +67,9 @@
 }
 
 @media screen and (max-width: 960px) {
+    .departments {
+        padding-top: 30px;
+    }
     .departments-box {
         flex-direction: column;
         gap: 20px;

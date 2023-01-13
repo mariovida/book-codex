@@ -285,4 +285,43 @@
   "isbn": "9789535205548",
   "desc": "The Game proslavljenog talijanskog pisca Alessandra Baricca – autora uspješnica Svila i Ocean more – britka je esejistička analiza i istovremeno kontemplacija koja, iz perspektive tehničkom napretku sklonog pripadnika boomerske generacije, propituje sveobuhvatne, upravo tektonske dosege digitalne revolucije u čijoj epohi živimo. Baricco se, sistematično, minuciozno i svima dostupnim jezikom, prihvatio „arheološke“, umnogome i forenzičke rekonstrukcije uzroka, tijeka i razvoja promjene koju smatra ključnom za redefiniciju suvremenog pojma čovjeka. Ovaj je esej pisan istovremeno kao priča: dinamičan, obratima bogat no konzekventan narativ čiji smo glavni junak mi sami, ono što smo – od ne tako davnog vremena kada je promjenu predvodila šačica supkulturnih čudaka, a reprezentirala je primitivna grafika igrice Space Invaders – postali ili upravo postajemo, a da toga nismo ni svjesni.",
   "ocjena": "3"
+}, {
+  "id": 23,
+  "url": "knjiga/gluma-i-neuroznanost",
+  "name": "Gluma i neuroznanost",
+  "author": "Marinko Leš",
+  "vrsta": "Publicistika",
+  "cover": "books/9789533555300.jpg",
+  "uvez": "Meki uvez",
+  "izdavac": "Naklada Ljevak d.o.o.",
+  "jezik": "Hrvatski jezik",
+  "isbn": "9789533555300",
+  "desc": "Knjiga Gluma i neuroznanost u širem je smislu svojevrsni uvod u kognitivne teorije izvedbe, pri čemu se kognitivnome pristupa „enaktivistički” s pridavanjem središnjeg mjesta iskustvenoj razini uvida u stvarnost. Udruživanju svih umjetničkih medija te apsorbiranju mnogobrojnih znanja, od filozofije do arhitekture, golemom instrumentariju teorije izvedbe ova knjiga priklju- čuje i promatranja iz perspektive neuroznanosti. Time se nastoji otvoriti novi transdisciplinarni (a ne samo interdisciplinarni) prostor promišljanja izvedbenih fenomena, prvenstveno glumačkog, pri čemu ambicija nije odgovoriti na dileme koje se postavljaju na novotvorenom sučelju disparatnih uvida, već je želja ukazati na problematska mjesta koje je potrebno znanstveno opisati/teorijski tematizirati/pedagoškom praksom oprimjeriti. Doprinos ove knjige, iznikle iz prvog doktorskog istraživanja u hrvatskoj akademskoj sredini (i među rijetkim inozemnim radovima takvog profila) nije eksperimentalan, već spekulativno-teorijski i pedagoško-praktičan (kroz traganje za teorijskom spojnicom inovativne enaktivne pedagogije glume i tradicionalne pedagogije glume, pri čemu je u znanstvenome smislu važna radikalnost metodološkog pomaka fokusa). Ova je knjiga pisana iz perspektive glumca, osobe s aktivnom kompetencijom, znanjem i vještinama, nekoga iz same srži kreativnog procesa i istra- živanja. Takav smjer istraživačke pozornosti doveo je do uobličavanja ideja i pitanja koja su se u umjetničkoj praksi i pedagogijama glume postavljala kako u prošlosti tako i danas, ali sada s iskorakom u dvojako akademsko istraživanje. Prvo, odvija se u području teorijskog promišljanja prakse koje nije nužno znanstveno-istraživačko, ali je teorijski fundirano i vrijedno za akademske programe umjetničkih akademija s profilom istraživanja poput onoga koji teoriju povezuje s dramaturgijom izvedbe. Drugo, taj se metodološki iskorak s odgovarajućom reinterpretacijom temeljnih pojmova i problema odnosi i na proučavanje poveznica praksom-utemeljene teorije izvedbenih umjetnosti s jedne i znanosti s druge strane. Cilj knjige Gluma i neuroznanost je ukazati na perpetuirajući odnos znanosti i umjetnosti, prakse i teorije te ranjivu intuitivnost ojačati znanstvenim potvrdama. Utoliko se radi o vrijednom doprinosu i izvedbenim umjetnostima i znanosti.",
+  "ocjena": "3"
+}, {
+  "id": 24,
+  "url": "knjiga/michelangelo",
+  "name": "Michelangelo",
+  "author": "Frank Zoellner",
+  "vrsta": "Publicistika",
+  "cover": "books/9783836537162.jpg",
+  "uvez": "Tvrdi uvez",
+  "izdavac": "Taschen",
+  "jezik": "Engleski jezik",
+  "isbn": "9783836537162",
+  "desc": "Before reaching the tender age of 30, Michelangelo Buonarroti (1475-1564) had already sculpted Pieta and David, two of the most famous sculptures in the entire history of art. As a sculptor, painter, draftsman, and architect, the achievements of this Italian master are unique-no artist before or after him has ever produced such a vast, multifaceted, and wide-ranging oeuvre. This fresh TASCHEN edition traces Michelangelo's ascent to the cultural elite of the Renaissance. Ten richly illustrated chapters cover the artist's paintings, sculptures, and architecture, including a close analysis of the artist's tour de force frescoes in the Sistine Chapel.Full-page reproductions and enlarged details allow readers to appreciate the finest details in the artist's repertoire, while the book's biographical essay considers Michelangelo's more personal traits and circumstances, such as his solitary nature, his thirst for money and commissions, his immense wealth, and his skill as a property investor.",
+  "ocjena": "3"
+}, {
+  "id": 25,
+  "url": "knjiga/cains-jawbone",
+  "name": "Cain's Jawbone",
+  "author": "Ernest Powys Mathers",
+  "vrsta": "Publicistika",
+  "cover": "books/9781800180796.jpg",
+  "uvez": "Meki uvez",
+  "izdavac": "",
+  "jezik": "Engleski jezik",
+  "isbn": "9781800180796",
+  "desc": "Six murders. One hundred pages. Millions of possible combinations… but only one is correct. Can you solve Torquemada’s murder mystery? In 1934, the Observer’s cryptic crossword compiler, Edward Powys Mathers (aka Torquemada), released a novel that was simultaneously a murder mystery and the most fiendishly difficult literary puzzle ever written. The pages have been printed in an entirely haphazard order, but it is possible – through logic and intelligent reading – to sort the pages into the only correct order, revealing six murder victims and their respective murderers. Only three puzzlers have ever solved the mystery of Cain’s Jawbone: do you have what it takes to join their ranks? Please note: this puzzle is extremely difficult and not for the faint-hearted.",
+  "ocjena": "4"
 }]

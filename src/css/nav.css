@@ -102,13 +102,12 @@ nav a.router-link-exact-active {
     height: 20px;
     position: fixed;
     top: 18px;
-    right: 32px;
+    right: 5%;
     cursor: pointer;
     outline: none;
-    z-index: 2;
+    z-index: 3;
     border: none;
     background-color: transparent;
-    /*overflow: hidden;*/
 }
 .icon span {
     position: absolute;
@@ -140,14 +139,14 @@ nav a.router-link-exact-active {
     transform: rotate(-45deg);
     top: 12px;
 }
-.open {
-    z-index: 3;
-}
 .open span {
     background-color: #E6E6E6;
 }
 .droper-content {
-	display: none;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 	position: fixed;
     top: 0;
     left: 0;
@@ -168,12 +167,6 @@ nav a.router-link-exact-active {
 	letter-spacing: 1px;
 	display: block;
 	text-align: center;
-}
-.show {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 @media screen and (max-width: 1280px) {
@@ -200,7 +193,6 @@ nav a.router-link-exact-active {
         margin: 0;
         z-index: 2;
         background-color: #E6E6E6;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
     nav a, nav button {
         display: none;

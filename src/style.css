@@ -10,6 +10,7 @@
 @import "css/footer.css";
 @import "css/departments.css";
 @import "css/catalog.css";
+@import "css/programs.css";
 
 * {
     scroll-behavior: smooth;

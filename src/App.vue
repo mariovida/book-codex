@@ -18,15 +18,19 @@
   </nav>
   <router-view/>
 
-  <button onclick="myFunction()" class="icon">
+  <button class="icon" @click="showMenu = !showMenu">
 		<span></span>
 		<span></span>
 		<span></span>
 	</button>
-  <div class="droper-content">
-	  <a href="momcadi/momcadi.php">MOMČADI</a>
-		<a href="#">NATJECANJA</a>
-		<a href="#">O KLUBU</a>
+  <div v-if="showMenu" class="droper-content">
+	  <router-link to="/" @click="showMenu = !showMenu; toggleNav()">NASLOVNICA</router-link>
+		<router-link to="/o-nama" @click="showMenu = !showMenu; toggleNav()">O NAMA</router-link>
+    <router-link to="/odjeli" @click="showMenu = !showMenu; toggleNav()">ODJELI</router-link>
+    <router-link to="/programi" @click="showMenu = !showMenu; toggleNav()">PROGRAMI</router-link>
+    <router-link to="/katalog" @click="showMenu = !showMenu; toggleNav()">KATALOG</router-link>
+    <router-link v-if="$store.state.user" to="/profil" @click="showMenu = !showMenu; toggleNav()">PROFIL</router-link>
+    <a v-if="$store.state.user" @click="$store.dispatch('logout')">ODJAVA</a>
 	</div>
 </template>
 
@@ -36,30 +40,27 @@
   import $ from 'jquery'
 
   export default {
+    data() {
+      return {
+        showMenu: false
+      }
+    },
     setup() {
       const store = useStore()
       onBeforeMount(() => {
         store.dispatch('fetchUser')
       })
     },
-    computed: {
-      currentRouteName() {
-        return this.$route.name;
+    mounted() {
+      $(".icon").click(function() {
+        $(".icon").toggleClass("open");
+      });
+    },
+    methods: {
+      toggleNav() {
+        $(".icon").removeClass("open");
       }
     },
-    mounted() {
-      const icon = document.querySelector('.icon');
-      const content = document.querySelector('.droper-content');
-      icon.addEventListener('click', () => {
-        if(!icon.classList.contains('open')) {
-          icon.classList.add('open');
-          content.classList.add('show');
-        } else {
-          icon.classList.remove('open');
-          content.classList.remove('show');
-        }
-      });
-    }
   }
 </script>
 
