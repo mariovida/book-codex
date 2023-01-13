@@ -91,3 +91,18 @@
     padding: 4px 0;
     transition: 1s;
 }
+@media screen and (max-width: 768px) {
+    .modal-container {
+        width: 90%;
+        padding: 20px 10px;
+    }
+    .modal-header h3 {
+        font-size: 1.4rem;
+    }
+    .modal-default-button {
+        top: 20px;
+        right: 20px;
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+}

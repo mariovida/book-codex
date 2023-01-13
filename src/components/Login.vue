@@ -23,7 +23,7 @@
                                 required/>
                                 <input 
                                 type="submit" 
-                                value="Login" />
+                                value="Prijava" />
                             </form>
                         </slot>
                     </div>

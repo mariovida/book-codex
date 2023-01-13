@@ -83,7 +83,12 @@
         margin: 0 20px 0 10px;
     }
     .book-info {
-        height: 120px;
+        height: 140px;
+    }
+    .book-info h3 {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        margin-bottom: 8px;
     }
     .book-info p {
         font-size: 0.8rem;
