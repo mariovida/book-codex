@@ -259,4 +259,30 @@
   "isbn": "9789537780920",
   "desc": "Jedne večeri Jona nije mogao zaspati. Zurio je kroz prozor na devetom katu svog nebodera u nebo obasjano zvijezdama. Najednom se nad gradom prosula blještava meteorska kiša. Jedan bolid odvojio se od ostalih i krenuo prema Joninu neboderu. Na prozorski prag spustio se maleni svjetleći čovječuljak i jednostavno ga upitao želi li poći s njim u nepoznato. Ne razmišljajući prviše, Jona je prihvatio primamljiv poziv i započela je njegova svemirska avantura. Susrest će tako Jona neobične nasmiješene likove, upoznati druge planete i njihove nesvakidašnje stanovnike te pritom naučiti koliko je krhka i važna ravnoteža svega što nas okružuje.",
   "ocjena": "5"
+}, {
+  "id": 21,
+  "url": "knjiga/48-zakona-moci",
+  "name": "48 zakona moći",
+  "author": "Robert Greene",
+  "vrsta": "Publicistika",
+  "cover": "books/9789533720968.jpg",
+  "uvez": "Tvrdi uvez",
+  "izdavac": "Stilus knjiga d.o.o.",
+  "jezik": "Hrvatski jezik",
+  "isbn": "9789533720968",
+  "desc": "Knjiga koja desetljećima ne silazi s top-lista najprodavanijih naslova u cijelom svijetu. Zadivljujuća, mudra, prosvjetljujuća i iznimno korisna knjiga koja analizira tri tisuće godina povijesti moći i sažima ih u 48 precizno i jasno definiranih zakona. Objedinivši filozofije velikih stratega, državnika i mislilaca poput Machiavellija, Sun Tzua, von Clausewitza, Elizabete I., Bismarcka, Kissingera i mnogih drugih, Greene je napisao uvjerljivu, praktičnu – na trenutke i šokantnu – knjigu koja će koristiti svima onima koji teže moći, proučavaju moć ili se jednostavno žele zaštititi od onih koji im nameću svoju moć i pokušavaju ovladati njihovim životom. Potkrijepljeni brojnim primjerima taktika slavnih i uspješnih osoba iz daljnje i bliže prošlosti, pa i sadašnjosti, koje su se vješto koristile moći – ili postale njezinom žrtvom – ovi će zakoni oduševiti sve one koji teže ovladati svim segmentima svoga života i žele shvatiti kako funkcioniraju međuljudski odnosi i igra moći. Obvezno štivo za sve one koji žele ostvariti prednost u međuljudskim odnosima, shvatiti kako pravila moći funkcioniraju u svakodnevnom okruženju, ali i za one koji se jednostavno žele obraniti od tuđih pokušaja ovladavanja njihovim životom.",
+  "ocjena": "3"
+}, {
+  "id": 22,
+  "url": "knjiga/the-game",
+  "name": "The Game",
+  "author": "Alessandro Baricco",
+  "vrsta": "Publicistika",
+  "cover": "books/9789535205548.jpg",
+  "uvez": "Tvrdi uvez",
+  "izdavac": "V.B.Z. d.o.o.",
+  "jezik": "Engleski jezik",
+  "isbn": "9789535205548",
+  "desc": "The Game proslavljenog talijanskog pisca Alessandra Baricca – autora uspješnica Svila i Ocean more – britka je esejistička analiza i istovremeno kontemplacija koja, iz perspektive tehničkom napretku sklonog pripadnika boomerske generacije, propituje sveobuhvatne, upravo tektonske dosege digitalne revolucije u čijoj epohi živimo. Baricco se, sistematično, minuciozno i svima dostupnim jezikom, prihvatio „arheološke“, umnogome i forenzičke rekonstrukcije uzroka, tijeka i razvoja promjene koju smatra ključnom za redefiniciju suvremenog pojma čovjeka. Ovaj je esej pisan istovremeno kao priča: dinamičan, obratima bogat no konzekventan narativ čiji smo glavni junak mi sami, ono što smo – od ne tako davnog vremena kada je promjenu predvodila šačica supkulturnih čudaka, a reprezentirala je primitivna grafika igrice Space Invaders – postali ili upravo postajemo, a da toga nismo ni svjesni.",
+  "ocjena": "3"
 }]

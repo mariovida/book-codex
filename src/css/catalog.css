@@ -1,7 +1,7 @@
 .catalog, .catalog-items {
     position: relative;
     max-width: 1920px;
-    margin: 0 auto;
+    margin: 0 auto !important;
     padding-top: 60px;
     font-size: 1.2rem;
     color: #333;
@@ -75,7 +75,7 @@
     grid-template-columns: repeat(4, 22%);
     grid-auto-rows: minmax(240px, 280px);
     gap: 4%;
-    padding: 20px 1rem;
+    padding: 20px 1rem 80px;
 }
 .category {
     max-width: 1920px;

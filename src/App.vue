@@ -9,16 +9,21 @@
     <router-link to="/programi">Programi</router-link>
     <router-link to="/katalog">Katalog</router-link>
     <router-link v-if="$store.state.user" to="/profil">Profil</router-link>
-    <!-- <router-link v-if="!$store.state.email" to="/prijava">Prijava</router-link> -->
-    <!-- <router-link to="/registracija">Registracija</router-link> -->
     <a v-if="$store.state.user" @click="$store.dispatch('logout')">Odjava</a>
   </nav>
   <router-view/>
+
+  <button onclick="myFunction()" class="icon">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
 </template>
 
 <script>
   import { onBeforeMount } from 'vue'
   import { useStore } from 'vuex'
+  import $ from 'jquery'
 
   export default {
     setup() {
@@ -31,6 +36,16 @@
       currentRouteName() {
         return this.$route.name;
       }
+    },
+    mounted() {
+      const icon = document.querySelector('.icon');
+      icon.addEventListener('click', () => {
+        if(!icon.classList.contains('open')) {
+          icon.classList.add('open');
+        } else {
+          icon.classList.remove('open');
+        }
+      });
     }
   }
 </script>

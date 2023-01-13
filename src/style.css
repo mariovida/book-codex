@@ -39,6 +39,7 @@ body::-webkit-scrollbar {
 .wrapper {
     max-width: 1920px;
     margin: 0 1rem;
+    transition: all 0.6s ease-in-out;
 }
 .wrapper-text {
     width: 50%;

@@ -45,6 +45,52 @@ nav a.router-link-exact-active {
     border-bottom: 0;
 }
 
+/* MOBILNA NAVIGACIJA */
+.icon {
+    display: none;
+    width: 28px;
+    height: auto;
+    position: absolute;
+    top: 18px;
+    right: 32px;
+    cursor: pointer;
+    outline: none;
+    z-index: 2;
+    border: none;
+    background-color: transparent;
+    /*overflow: hidden;*/
+}
+.icon span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #C14E2E;
+    border-radius: 9px;
+    transition: 0.25s ease-in-out all;
+    outline: none;
+}
+.icon span:nth-child(1) {
+    top: 0;
+}
+.icon span:nth-child(2) {
+    top: 10px;
+}
+.icon span:nth-child(3) {
+    top: 20px;
+}
+.icon.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 12px;
+}
+.icon.open span:nth-child(2) {
+    transform: rotate(45deg);
+    opacity: 0;
+}
+.icon.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 12px;
+}
+
 @media screen and (max-width: 1280px) {
     nav img {
         top: 10%;
@@ -72,5 +118,8 @@ nav a.router-link-exact-active {
     }
     nav a:first-of-type {
         display: block;
+    }
+    .icon {
+        display: unset;
     }
 }
