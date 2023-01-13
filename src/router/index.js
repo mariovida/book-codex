@@ -9,7 +9,6 @@ import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import ProfileView from "../views/ProfileView.vue";
 import BookView from "../views/BookView.vue";
-import AddBookView from "../views/AddBookView.vue";
 import { auth } from '@/firebase';
 
 const routes = [
@@ -55,11 +54,6 @@ const routes = [
     path: '/knjiga/:id',
     name: 'Knjiga',
     component: BookView
-  },
-  {
-    path: '/dodavanje',
-    name: 'Dodaj knjigu',
-    component: AddBookView
   },
   {
     path: '/registracija',
