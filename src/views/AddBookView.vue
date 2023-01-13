@@ -20,7 +20,7 @@
 <script>
 import axios from "axios";
 
-const baseURL = "http://localhost:3000/posts";
+const baseURL = "http://bookcodex.netlify.app/posts";
 
 export default {
   name: "TodoList",
