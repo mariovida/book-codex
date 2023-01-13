@@ -159,12 +159,12 @@ nav a.router-link-exact-active {
 }
 .droper-content a {
 	float: none;
-	font-size: 18px;
+	font-size: 24px;
     font-weight: 500;
 	color: #E6E6E6 !important;
-	padding: 14px 24px;
+	padding: 16px 24px;
 	text-decoration: none;
-	letter-spacing: 1px;
+	letter-spacing: 0.5px;
 	display: block;
 	text-align: center;
 }
