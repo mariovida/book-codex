@@ -1,0 +1,71 @@
+.book {
+    position: relative;
+    max-width: 1920px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: 60px;
+    font-size: 1.2rem;
+    color: #333;
+}
+.book-back {
+    display: block;
+    max-width: 1920px;
+    margin: 40px auto 20px;
+    padding-left: 1rem;
+    text-decoration: none;
+}
+.book-row {
+    position: relative;
+    width: 100vw;
+    height: 350px;
+    background-color: #333;
+}
+.book-row .wrapper {
+    margin: 0 auto;
+}
+.book-row img {
+    position: absolute;
+    width: 240px;
+    margin-left: 1rem;
+    margin-top: 30px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.book-row-info {
+    width: auto;
+    height: 350px;
+    padding-top: 40px;
+    margin-left: 300px;
+    color: #E6E6E6;
+}
+.book-name {
+    font-size: 26px;
+}
+.book-author {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.stars {
+    width: 16px;
+    transform: scale(0.8);
+    color: #8C8C8C;
+}
+.stars.filled {
+    color: #E6E6E6;
+}
+.book-desc {
+    width: 700px;
+    margin-top: 12px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+@media screen and (max-width: 1920px) {
+    .book-back {
+        width: 90%;
+    }
+}
