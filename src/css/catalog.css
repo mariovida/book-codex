@@ -74,9 +74,9 @@
 .catalog-items {
     display: grid;
     grid-template-columns: repeat(4, 22%);
-    grid-auto-rows: minmax(240px, 280px);
-    gap: 4%;
-    padding: 20px 1rem 80px;
+    grid-auto-rows:min-content;
+    gap: 2.9em;
+    padding: 20px 1rem 120px;
 }
 .category {
     max-width: 1920px;

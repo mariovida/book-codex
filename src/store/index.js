@@ -1,17 +1,29 @@
 import { createStore } from "vuex";
 import router from '@/router'
 import { auth } from '@/firebase'
-import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, signOut, updatePhoneNumber } from "firebase/auth";
+import { db } from "@/firebase";
+import { collection, doc, addDoc, setDoc } from "firebase/firestore";
 
 export default createStore({
   state: {
     user: null,
-    displayName: null
+    displayName: null,
+    uidValue: null,
   },
   mutations: {
     SET_USER (state, user) {
-      state.user = user,
-      state.displayName = user.displayName
+      state.user = user;
+      state.displayName = user.displayName;
+      state.uidValue = user.uid;
+      if(user.photoURL == null) {
+        const docRef = setDoc(doc(db, "users", user.uid), {
+          value: user.uid,
+        });
+        updateProfile(auth.currentUser, {
+          photoURL: "true"
+        })
+      }
     },
     CLEAR_USER (state) {
       state.user = null
@@ -107,7 +119,7 @@ export default createStore({
         if (user === null) {
           commit('CLEAR_USER')
         } else {
-          commit('SET_USER', user, user.displayName)
+          commit('SET_USER', user, user.displayName, user.uidValue)
 
           if (router.isReady() && router.currentRoute.value.path === '/prijava') {
             router.push('/profil')

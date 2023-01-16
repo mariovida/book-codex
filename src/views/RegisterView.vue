@@ -28,21 +28,22 @@
 </template>
   
 <script>
-    import { ref } from 'vue'
-    import { useStore } from 'vuex'
-    export default {
-        setup () {
-            const register_form = ref({});
-            const store = useStore();
-            const register = () => {
-                store.dispatch('register', register_form.value);
-            }
-            return {
-                register_form,
-                register
-            }
+import { ref } from 'vue'
+import { useStore } from 'vuex'
+
+export default {
+    setup () {
+        const register_form = ref({});
+        const store = useStore();
+        const register = () => {
+            store.dispatch('register', register_form.value);
         }
-    }
+        return {
+            register_form,
+            register
+        }
+    },
+}
 </script>
   
 <style>

@@ -75,7 +75,7 @@
         <button class="load-more" @click="loadMore">Učitaj još</button>
     </section>
 
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
 </template>
   
 <script>
@@ -85,6 +85,8 @@ import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import Footer from '@/components/Footer.vue';
 import axios from 'axios';
+import { db } from "@/firebase";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 export default {
     components: {
@@ -107,10 +109,25 @@ export default {
             modules: [Navigation, Pagination, Autoplay],
         };
     },
-    created() {
-        axios.get('/books.json').then(response => {
-            this.items = response.data;
-        });
+    async created() {
+        
+        const querySnapshot = await getDocs(collection(db, "books"));
+        let fbBooks = []
+        querySnapshot.forEach((doc) => {
+        const item = {
+            id: doc.id,
+            url: doc.data().url,
+            name: doc.data().name,
+            author: doc.data().author,
+            vrsta: doc.data().vrsta,
+            ocjena: doc.data().ocjena,
+            cover: doc.data().cover,
+        }
+        fbBooks.push(item)
+        })
+        this.items = fbBooks;
+
+
     },
     computed: {
         filterCategories() {

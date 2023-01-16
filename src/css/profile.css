@@ -38,3 +38,29 @@
 .profile-card__details p {
     font-size: 1.1rem;
 }
+.qr-code {
+    max-width: 100%;
+    aspect-ratio: 1 / 1; 
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    border-radius: 8px;
+    background-color: #C14E2E;
+    padding: 20px;
+    margin: 30px auto;
+}
+.qr-code p {
+    margin-top: 16px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-card {
+        display: none;
+    }
+    .qr-code {
+        display: flex;
+    }
+}

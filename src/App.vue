@@ -6,7 +6,7 @@
     <router-link to="/">Naslovnica</router-link>
     <router-link to="/o-nama">O nama</router-link>
     <router-link to="/odjeli">Odjeli</router-link>
-    <router-link to="/programi">Programi</router-link>
+    <!--<router-link to="/programi">Programi</router-link>-->
     <router-link to="/katalog">Katalog</router-link>
     <div  v-if="$store.state.user" class="dropdown">
       <button class="dropbtn">{{$store.state.displayName.substring(0, 1)}}</button>

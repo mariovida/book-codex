@@ -1,39 +1,114 @@
 <template>
-  <a href="/katalog" class="book-back">Popis knjiga</a>
+  <a href="/katalog" class="book-back"><i class="fa-regular fa-left-long"></i> Katalog</a>
   <section class="book-row">
-    <div class="wrapper">
-      <img v-for="item in filteredItems" :key="item.id" v-bind:src="'/'+item.cover" v-bind:alt="item.name" data-aos="fade-up" data-aos-duration="800" />
-      <div class="book-row-info" v-for="item in filteredItems" :key="item.id">
+    <div class="wrapper-text">
+      <img v-for="item in items" :key="item.id" v-bind:src="'/'+item.cover" v-bind:alt="item.name" data-aos="fade-up" data-aos-duration="800" />
+      <div class="book-row-info" v-for="item in items" :key="item.id">
         <p class="book-name">{{item.name}}</p>
         <p class="book-author">{{item.author}}</p>
         <span v-for="n in 5" :key="n" class="fa fa-star stars" :class="{ filled: n <= item.ocjena }"></span>
         <p class="book-desc">{{item.desc}}</p>
+        <p class="book-desc">{{item.stanje}}</p>
+        <p class="book-desc">{{item.isbn}}</p>
+<p>{{ userId }}</p>
+        <button v-if="$store.state.user && this.checked == false" @click="showAlert(item.id, item.stanje, item.isbn)">Rezerviraj</button>
       </div>
     </div>
   </section>
-  <section class="book">
+  <section class="book" style="margin-top:60px;">
+
   </section>
 </template>
   
 <script>
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import { useStore } from 'vuex';
+import { db } from "@/firebase";
+import { doc, query, collection, where, addDoc, setDoc, getDocs, updateDoc, updateUser } from "firebase/firestore";
+import { getAuth } from 'firebase/auth'
+
 
 export default {
   name: 'BookView',
   data() {
     return {
       items: [],
+      reservations: [],
+      checked: false,
+      userId: null,
     };
   },
-  created() {
+  async created() {
     this.id = "knjiga/" + this.$route.params.id;
-    axios.get('/books.json').then(response => {
-      this.items = response.data;
-    });
+    console.log(this.$route);
+    const querySnapshot = await getDocs(query(collection(db, "books"), where("url", "==", this.id)));
+    let fbBooks = []
+    querySnapshot.forEach((doc) => {
+      const item = {
+        id: doc.id,
+        url: doc.data().url,
+        name: doc.data().name,
+        author: doc.data().author,
+        desc: doc.data().desc,
+        vrsta: doc.data().vrsta,
+        ocjena: doc.data().ocjena,
+        cover: doc.data().cover,
+        stanje: doc.data().stanje,
+        isbn: doc.data().isbn,
+      }
+      fbBooks.push(item)
+    })
+    this.items = fbBooks;
+
+    const checkReservation = await getDocs(collection(db, "users"));
+    let reservedBooks = []
+    checkReservation.forEach((doc) => {
+      const book = {
+        user: doc.data().user,
+        value: doc.data().value,
+      }
+      if(book.user == this.uid) {
+        this.checked = true;
+      }
+      reservedBooks.push(book)
+    })
+    this.reservations = reservedBooks;
   },
-  computed: {
-    filteredItems() {
-      return this.items.filter(item => item.url === this.id);
+  methods: {
+    showAlert(id, stanje, isbn) {
+      Swal.fire({
+        title: 'Jeste li sigurni?',
+        text: "Želite li rezervirati ovu knjigu?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#CF5330',
+        cancelButtonColor: '#B3B3B3',
+        cancelButtonText: 'Poništi',
+        confirmButtonText: 'Da, rezerviraj!'
+      }).then((result) => {
+        if (result.value) {
+          this.reserveBook(id, stanje, isbn)
+          Swal.fire(
+            'Rezervirano!',
+            'Knjiga je rezervirana.',
+            'success'
+          )
+        }
+      })
+    },
+    async reserveBook(id, stanje, isbn) {
+      const newStanje = stanje - 1;
+      const uid = this.$store.state.uidValue;
+      const bookCode = isbn;
+
+      await updateDoc(doc(db, "books", id), {
+        stanje: newStanje
+      });
+      await addDoc(collection(db, "users"), {
+        user: uid,
+        value: bookCode 
+      });
     }
   },
 };
