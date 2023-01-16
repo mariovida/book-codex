@@ -1,5 +1,4 @@
 <template>
-    <component-to-re-render :key="componentKey" />
     <section class="profile">
       <div class="wrapper">
         <h1>Moj profil</h1>
@@ -16,33 +15,56 @@
             <qrcode-vue v-if="count" :value="count" :size="size" level="Q" foreground="#C14E2E" background="#FFFFFF" :render-as="svg" :margin=2 id="mycanvas" style="border-radius:8px;"/>
             <p>{{ count }}</p>
         </div>
+         
       </div>
     </section>
-  </template>
+    <div v-for="book in books" :key="book.code">
+            <p>{{ book.bookName }}</p>
+        </div>
+</template>
   
 <script>
 import QrcodeVue from 'qrcode.vue'
+import { db } from "@/firebase";
+import { doc, query, collection, where, addDoc, setDoc, getDocs, updateDoc, updateUser } from "firebase/firestore";
 
 export default {
     data() {
         return {
             size: 250,
-            componentKey: 0,
+            books: [],
         };
     },
     components: {
       QrcodeVue,
+    },
+    async created() {
+        const userId = this.$store.state.uidValue;
+        const querySnapshot = await getDocs(query(collection(db, "users"), where("user", "==", userId)));
+        const allBooks = await getDocs(collection(db, "books"));
+
+        let reservations = []
+
+        querySnapshot.forEach((doc) => {
+            const item = {
+                isbn: doc.data().value,
+            }
+            allBooks.forEach((doc) => {
+                const book = {
+                    code: doc.data().isbn,
+                    bookName: doc.data().name,
+                }
+                if(book.code == item.isbn) {
+                    reservations.push(book)
+                }
+            })
+            this.books = reservations;
+        })
     },
     computed: {
         count() {
             return this.$store.state.user.uid
         }
     },
-    methods: {
-        forceRerender() {
-            this.componentKey += 1;  
-        },
-    }
 }
 </script>
-  
