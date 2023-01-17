@@ -23,6 +23,7 @@
                 value="Registracija" />
         </form>
         <p v-if="$store.state.error">{{ $store.state.error }}</p>
+        <p class="register_form">Već imate račun? <a href="/prijava">Prijavite se.</a></p>
     </section>
     <section id="register-image" data-aos="fade-left" data-aos-duration="700"></section>
 </template>

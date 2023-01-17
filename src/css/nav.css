@@ -44,6 +44,16 @@ nav a.router-link-exact-active {
 .nav_logo.router-link-exact-active {
     border-bottom: 0;
 }
+.login-btn {
+    background-color: #C14E2E;
+    color: #E6E6E6 !important;
+    padding: 9px 18px;
+    border-radius: 18px;
+    transition: .2s;
+}
+.login-btn:hover {
+    background-color: #CF5330;
+}
 
 /* INICIJAL */
 .dropdown {

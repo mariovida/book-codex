@@ -1,12 +1,3 @@
-.book {
-    position: relative;
-    max-width: 1920px;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding-top: 60px;
-    font-size: 1.2rem;
-    color: #333;
-}
 .book-back {
     display: block;
     max-width: 1920px;
@@ -62,6 +53,129 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+}
+.book-row-info button {
+    width: 180px;
+    font-size: 16px;
+    padding: 4px 0;
+    background-color: #E6E6E6;
+    border: 0;
+    border-radius: 18px;
+    margin-top: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.book-row-info button:hover {
+    background-color: #F2F2F2;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 240px;
+    background-color: #C14E2E;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    font-size: 14px;
+    z-index: 1;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -120px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #C14E2E transparent transparent transparent;
+}  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.inventory {
+    padding-left: 300px;
+    padding-top: 6px;
+}
+.book, .more-books, .more-books-info {
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px 1rem 0;
+}
+.book h3 {
+    margin-top: 48px;
+}
+.book p {
+    margin-bottom: 8px;
+}
+.more-books {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 160px;
+    padding-top: 20px;
+    margin-bottom: 400px;
+}
+.more-books-info {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    padding: 20px 1rem;
+}
+.more-books-info p {
+    font-size: 21px;
+    font-weight: 500;
+}
+.more-books-info a {
+    display: block;
+    text-decoration: none;
+    background-color: #C14E2E !important;
+    color: #E6E6E6 !important;
+    padding: 6px 32px;
+    border-radius: 18px;
+    transition: 0.2s;
+}
+.more-books-info a:hover {
+    background-color: #CF5330 !important;
+}
+.more-books a {
+    width: 16%;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.more-books a:hover {
+    transform: translateY(-12px);
+}
+.more-books img {
+    width: 100%;
+    object-fit: cover;
+    margin-left: 0;
+    border-radius: 4px;
+}
+.more-books p {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+    color: #333;
+}
+.more-books p:nth-child(3) {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 6px;
 }
 
 @media screen and (max-width: 1920px) {

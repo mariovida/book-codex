@@ -1,3 +1,33 @@
+.catalog-hero {
+    position: relative;
+    width: 100vw;
+    height: 420px;
+    background-image: url('@/assets/catalog-hero.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.catalog-hero .overlay {
+    background-color: rgba(0,0,0,0.55);
+}
+.catalog-hero-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-bottom: 26px;
+}
+.catalog-hero-info h1 {
+    color: #FFFFFF;
+    z-index: 1;
+}
+.catalog-hero-info h1::before {
+    border-color: #E6E6E6;
+}
 .catalog, .catalog-items {
     position: relative;
     max-width: 1920px;
@@ -80,7 +110,7 @@
 }
 .category {
     max-width: 1920px;
-    width: 90%;
+    width: 90% !important;
     font-weight: 600;
     padding: 10px 1rem;
     color: #C14E2E;

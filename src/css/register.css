@@ -28,6 +28,9 @@
     background-size: cover;
     background-position: left;
 }
+.register_form {
+    margin-bottom: 16px;
+}
 .register input {
     width: 220px;
     display:block;

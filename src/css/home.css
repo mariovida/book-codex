@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.45);
     z-index: 0;
 }
 .home_hero h1 {
@@ -28,6 +28,10 @@
 }
 .home_hero h1::before {
     border-top: .3rem solid #E6E6E6;
+}
+.home_hero h2 {
+    max-width: 50%;
+    font-size: 28px;
 }
 .login_window {
     position: absolute;

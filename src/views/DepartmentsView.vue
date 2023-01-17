@@ -33,7 +33,18 @@
         </div>
       </div>
     </section>
+
+    <Footer></Footer>
 </template>
   
-<script></script>
+<script>
+import Footer from '@/components/Footer.vue';
+
+export default {
+  name: 'DepartmentsView',
+  components: {
+    Footer,
+  },
+}
+</script>
   

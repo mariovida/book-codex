@@ -1,3 +1,30 @@
+.about-hero {
+    position: relative;
+    width: 100vw;
+    height: 420px;
+    background-image: url('@/assets/about-hero2.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about-hero-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-bottom: 26px;
+}
+.about-hero-info h1 {
+    color: #FFFFFF;
+    z-index: 1;
+}
+.about-hero-info h1::before {
+    border-color: #E6E6E6;
+}
 .about {
     position: relative;
     max-width: 1920px;
@@ -9,22 +36,6 @@
 }
 .about p {
     margin-bottom: 8px;
-}
-.about .swiper {
-    width: 100%;
-    height: 600px;
-    margin: 40px 0 60px;
-}
-.about .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
-.about .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 .about-hours {
     width: 100%;
@@ -40,6 +51,26 @@
     font-weight: 600;
     margin-bottom: 12px;
 }
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.team-single {
+    width: 23%;
+    transition: 0.3s;
+}
+.team-single img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.team-single:hover {
+    transform: translateY(-6px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 
 @media screen and (max-width: 960px) {
     .about {
@@ -48,5 +79,19 @@
     .about .swiper {
         height: 200px;
         margin: 30px 0 40px;
+    }
+    .team {
+        gap: 30px;
+    }
+    .team-single {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .team {
+        gap: 20px;
+    }
+    .team-single {
+        width: 100%;
     }
 }

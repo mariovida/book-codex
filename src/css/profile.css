@@ -1,42 +1,32 @@
-.profile {
+.profile-hero {
     position: relative;
-    max-width: 1920px;
-    margin: 0 auto;
-    padding-top: 60px;
-    font-size: 1.2rem;
+    z-index: -1;
+    width: 100vw;
+    height: 420px;
     color: #333;
+    background-image: url('@/assets/profile-hero.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.profile-card {
+.profile-hero-info {
     display: flex;
-    align-items: center;
-    max-width: 600px;
-    height: 200px;
-    margin-top: 40px;
-    background-color: #C14E2E;
-    border-radius: 8px;
-}
-.profile-card__avatar {
-    width: 200px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    max-width: 1920px;
     height: 100%;
-    padding: 10px;
-    margin: 0 10px;
+    margin: 0 auto;
+    padding-left: 1rem;
 }
-.profile-card__avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+.profile-hero-info p:first-child {
+    font-size: 46px;
+    font-weight: 600;
+    padding-bottom: 18px;
 }
-.profile-card__details {
-    color: #E6E6E6;
-    padding-right: 16px;
-}
-.profile-card__details h3 {
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-}
-.profile-card__details p {
-    font-size: 1.1rem;
+.profile-hero-info p:nth-child(2) {
+    font-size: 16px;
+    padding-bottom: 18px;
 }
 .qr-code {
     max-width: 100%;
@@ -54,6 +44,84 @@
 .qr-code p {
     margin-top: 16px;
     color: #FFFFFF;
+}
+.reservations, .admin-buttons, .add-book, .add-news {
+    position: relative;
+    max-width: 1920px;
+    min-height: 80vh;
+    margin: 0 auto;
+    padding-top: 60px;
+    font-size: 1.2rem;
+    color: #333;
+}
+.admin-buttons {
+    min-height: auto;
+}
+.admin-buttons button {
+    font-size: 16px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #C14E2E;
+    padding: 6px 8px;
+    margin-right: 18px;
+    cursor: pointer;
+}
+.admin-buttons button:hover {
+    color: #C14E2E;
+}
+
+/* DODAVANJE KNJIGA */
+.add-book form {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 5%;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: flex-end;
+    margin-top: 60px;
+}
+.add-book form input, .add-book form select, .add-news form input, .add-news form textarea {
+    font-size: 16px;
+    padding: 4px 10px;
+    border: 0;
+    border: 1px solid #C14E2E;
+}
+/* Chrome, Safari, Edge, Opera */
+.add-book form input::-webkit-outer-spin-button, .add-book form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+.add-book form input[type=number] {
+    -moz-appearance: textfield;
+    width: 45%;
+}
+.add-book form input:focus, .add-book form select:focus, .add-news form input:focus, .add-news form textarea:focus {
+    outline: 0;
+}
+.add-book form button, .add-news form button {
+    border: 0;
+    color: #E6E6E6;
+    background-color: #C14E2E;
+    font-size: 16px;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+/* DODAVANJE VIJESTI */
+.add-news form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+.add-news form input, .add-news form textarea, .add-news form button {
+    width: 500px;
+    margin-bottom: 20px;
+}
+.add-news form textarea {
+    min-height: 300px;
 }
 
 @media screen and (max-width: 768px) {

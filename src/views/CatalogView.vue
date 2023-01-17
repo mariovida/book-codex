@@ -1,21 +1,12 @@
 <template>
+    <section class="catalog-hero">
+        <div class="overlay"></div>
+        <div class="catalog-hero-info">
+            <h1>Katalog</h1>
+        </div>
+    </section>
     <section class="catalog">
         <div class="wrapper">
-            <h1>Katalog</h1>
-
-            <!--<swiper 
-                :loop="false" 
-                :autoplay="{
-                    delay: 3000 
-                }"
-                    :pagination="{
-                    clickable: true,
-                }" 
-                :modules="modules" 
-                class="mySwiper"
-            >
-                <swiper-slide><img src="@/assets/header-img3.jpg" /></swiper-slide>
-            </swiper>-->
 
           
                 <!--<div>

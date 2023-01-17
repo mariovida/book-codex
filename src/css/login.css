@@ -1,3 +1,36 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 45vw;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #333;
+}
+.login h1::before {
+    display: none;
+}
+.login input {
+    width: 220px;
+    display:block;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    background-color: transparent;
+    border: 1px solid #C14E2E;
+}
+.login input:focus {
+    outline: 0;
+}
+.login input[type="submit"] {
+    background-color: #C14E2E;
+    color: #E6E6E6;
+    cursor: pointer;
+}
+.login input[type="submit"]:hover {}
+
 /* LOGIN MODAL */
 .modal-mask {
     position: fixed;

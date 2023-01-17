@@ -15,6 +15,9 @@
         <a v-if="$store.state.user" @click="$store.dispatch('logout')">Odjava</a>
       </div>
     </div>
+    <div v-if="!$store.state.user">
+      <router-link to="/prijava" class="login-btn">Prijava</router-link>
+    </div>
   </nav>
   <router-view/>
 
