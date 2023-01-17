@@ -73,15 +73,27 @@
 }
 
 @media screen and (max-width: 1280px) {
+    .home_hero h2 {
+        max-width: 90%;
+        font-size: 24px;
+    }
 }
 @media screen and (max-width: 960px) {
+    .home_hero h2 {
+        font-size: 21px;
+    }
     .login_box a.login-btn {
         font-size: 1.2rem;
     }
 }
 @media screen and (max-width: 768px) {
     .home_hero {
-        height: 320px;
+        height: 360px;
+    }
+    .home_hero h2 {
+        width: 100%;
+        font-size: 16px;
+        line-height: 21px;
     }
     .login_box a.login-btn {
         font-size: 1rem;

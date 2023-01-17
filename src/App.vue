@@ -8,15 +8,14 @@
     <router-link to="/odjeli">Odjeli</router-link>
     <!--<router-link to="/programi">Programi</router-link>-->
     <router-link to="/katalog">Katalog</router-link>
-    <div  v-if="$store.state.user" class="dropdown">
+    <router-link to="/prijava" v-if="!$store.state.user" class="login-btn">Prijava</router-link>
+
+    <div v-if="$store.state.user" class="dropdown">
       <button class="dropbtn">{{$store.state.displayName.substring(0, 1)}}</button>
       <div class="dropdown-content">
         <router-link v-if="$store.state.user" to="/profil">Profil</router-link>
         <a v-if="$store.state.user" @click="$store.dispatch('logout')">Odjava</a>
       </div>
-    </div>
-    <div v-if="!$store.state.user">
-      <router-link to="/prijava" class="login-btn">Prijava</router-link>
     </div>
   </nav>
   <router-view/>
@@ -30,8 +29,8 @@
 	  <router-link to="/" @click="showMenu = !showMenu; toggleNav()">NASLOVNICA</router-link>
 		<router-link to="/o-nama" @click="showMenu = !showMenu; toggleNav()">O NAMA</router-link>
     <router-link to="/odjeli" @click="showMenu = !showMenu; toggleNav()">ODJELI</router-link>
-    <router-link to="/programi" @click="showMenu = !showMenu; toggleNav()">PROGRAMI</router-link>
     <router-link to="/katalog" @click="showMenu = !showMenu; toggleNav()">KATALOG</router-link>
+    <router-link to="/prijava" v-if="!$store.state.user" @click="showMenu = !showMenu; toggleNav()" class="login-btn">PRIJAVA</router-link>
     <router-link v-if="$store.state.user" to="/profil" @click="showMenu = !showMenu; toggleNav()">PROFIL</router-link>
     <a v-if="$store.state.user" @click="$store.dispatch('logout')">ODJAVA</a>
 	</div>

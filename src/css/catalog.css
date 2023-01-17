@@ -199,6 +199,12 @@
 }
 
 @media screen and (max-width: 1920px) {
+    .catalog-hero-info {
+        max-width: 90%;
+    }
+    .catalog-hero-info h1 {
+        font-size: 32px;
+    }
     .catalog-cat input {
         right: 6%;
     }
@@ -239,6 +245,9 @@
     }
 }
 @media screen and (max-width: 768px) {
+    .catalog-hero {
+        height: 250px;
+    }
     .catalog-cat button {
         font-size: 12px;
     }

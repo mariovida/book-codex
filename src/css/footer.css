@@ -41,3 +41,22 @@
 .social a:hover > img {
     transform: translateY(-4px);
 }
+
+@media screen and (max-width: 960px) {
+    .footer .wrapper {
+        flex-wrap: wrap;
+    }
+    .footer-col {
+        width: 50%;
+        margin-bottom: 32px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer {
+        margin-top: 80px;
+        padding: 42px 0 6px;
+    }
+    .footer-col {
+        width: 100%;
+    }
+}

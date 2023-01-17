@@ -124,6 +124,23 @@
     padding: 4px 0;
     transition: 1s;
 }
+
+@media screen and (max-width: 960px) {
+    .login {
+        position: relative;
+        top: 250px;
+        width: 100vw;
+        padding-top: 30px;
+    }
+    .login h1 {
+        font-size: 1.5rem;
+    }
+    .login input {
+        width: 100%;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
 @media screen and (max-width: 768px) {
     .modal-container {
         width: 90%;

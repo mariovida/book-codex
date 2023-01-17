@@ -124,11 +124,54 @@
     min-height: 300px;
 }
 
+@media screen and (max-width: 960px) {
+    .add-book form {
+        width: 100%;
+    }
+    .add-news form {
+        margin-top: 30px;
+    }
+}
 @media screen and (max-width: 768px) {
-    .profile-card {
-        display: none;
+    .profile-hero {
+        height: 250px;
+        
+    }
+    .profile-hero-info p {
+        z-index: 0;
+        color: #FFFFFF;
+    }
+    .profile-hero-info p:first-child {
+        font-size: 32px;
+    }
+    .reservations, .admin-buttons, .add-book, .add-news {
+        padding-top: 30px;
+        min-height: auto;
+    }
+    .admin-buttons button {
+        font-size: 14px;
     }
     .qr-code {
         display: flex;
+    }
+    
+    /* DODAVANJE KNJIGA */
+    .add-book form {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0;
+        grid-row-gap: 16px;
+        margin-top: 30px;
+    }
+    .add-book form input, .add-book form select, .add-news form input, .add-news form textarea, .add-book form button, .add-news form button {
+        font-size: 14px;
+    }
+    .add-book form input[type=number] {
+        width: 100%;
+    }
+
+    /* DODAVANJE VIJESTI */
+    .add-news form input, .add-news form textarea, .add-news form button {
+        width: 100%;
     }
 }

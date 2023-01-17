@@ -5,6 +5,7 @@
         <p class="p-big">Knjižnica "Codex"</p>
         <p>Trg kralja Tomislava 12, 10000 Zagreb, Hrvatska</p>
         <p>Tel.: +1 345 8319</p>
+        <p><a href="mailto:codex@gkcodex.hr">codex@gkcodex.hr</a></p>
       </div>
       <div class="footer-col">
         <p class="p-big">Radno vrijeme</p>

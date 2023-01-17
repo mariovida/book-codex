@@ -7,7 +7,7 @@
         </div>
     </section>
 
-    <div class="qr-code">
+    <div class="qr-code" v-if="$store.state.displayName!='Administrator'">
         <qrcode-vue v-if="count" :value="count" :size="size" level="Q" foreground="#C14E2E" background="#FFFFFF" :render-as="svg" :margin=2 id="mycanvas" style="border-radius:8px;"/>
         <p>{{ count }}</p>
     </div>

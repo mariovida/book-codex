@@ -26,10 +26,57 @@
         <p>Naši zaposelnici iz tima za marketing i komunikaciju odgovorni su za promoviranje knjižnice i njene misije, te za stvaranje i održavanje aktivne zajednice oko knjižnice. Oni također razvijaju i implementiraju strategije za privlačenje donatora i suradnika.</p>
         <p>Naš tim za podršku korisnicima odgovoran je za pružanje pomoći korisnicima u korištenju knjižnice i pristupanju knjigama. Oni također rade na rješavanju problema i odgovaraju na pitanja korisnika.</p>
         <div class="team">
-          <div class="team-single"><img src="/team/emp1.jpg" /></div>
-          <div class="team-single"><img src="/team/emp2.jpg" /></div>
-          <div class="team-single"><img src="/team/emp3.jpg" /></div>
-          <div class="team-single"><img src="/team/emp4.jpg" /></div>
+          <swiper 
+          :slidesPerView="1"
+          :slidesPerGroup="1"
+          :spaceBetween="50"
+          :loopFillGroupWithBlank="true"
+          :breakpoints="{
+            '768': {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+            },
+            '960': {
+              slidesPerView: 2,
+              slidesPerGroup: 1,
+            },
+            '1280': {
+              slidesPerView: 3,
+              slidesPerGroup: 1,
+            },
+            '1620': {
+              slidesPerView: 4.5,
+              slidesPerGroup: 1,
+              spaceBetween: 20,
+            },
+          }"
+          :modules="modules"
+          >
+            <swiper-slide>
+              <div class="team-single"><img src="/team/emp1.jpg" /></div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="team-single"><img src="/team/emp2.jpg" /></div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="team-single"><img src="/team/emp3.jpg" /></div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="team-single"><img src="/team/emp4.jpg" /></div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="team-single"><img src="/team/emp5.jpg" /></div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="team-single"><img src="/team/emp6.jpg" /></div>
+            </swiper-slide>
+             <swiper-slide>
+              <div class="team-single"><img src="/team/emp7.jpg" /></div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="team-single"><img src="/team/emp8.jpg" /></div>
+            </swiper-slide>
+          </swiper>
         </div>
 
         <h2 id="uclanjenje" class="mt-56 mb-1">Učlanjenje</h2>
