@@ -59,6 +59,9 @@
 .reservations h3 {
     margin-bottom: 52px;
 }
+.show-reservations h1 {
+    margin-bottom:70px
+}
 .reservations-list {
     float: left;
     width: 73%;
@@ -105,7 +108,7 @@
     border-bottom-left-radius: 24px;
 }
 .reservation-info {
-    min-width: 400px;
+    min-width: 500px;
     background-color: #FFFFFF;
     padding: 18px 32px;
     margin-left: 32px;
@@ -187,11 +190,15 @@
     outline: 0;
 }
 .add-book form button, .add-news form button {
+    max-width: 200px;
+    width: auto;
+    position: absolute;
+    bottom: -80px;
     border: 0;
     color: #E6E6E6;
     background-color: #C14E2E;
     font-size: 16px;
-    padding: 4px 0;
+    padding: 8px 24px;
     cursor: pointer;
 }
 
@@ -248,7 +255,7 @@
     .profile-hero-info p:first-child {
         font-size: 32px;
     }
-    .reservations, .admin-buttons, .add-book, .add-news {
+    .reservations, .admin-buttons, .add-book, .add-news, .show-reservations {
         padding-top: 30px;
     }
     .admin-buttons button {

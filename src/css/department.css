@@ -31,4 +31,10 @@
 .department-nav a:nth-child(2):hover {
     outline: 0;
     cursor: default;
-} 
+}
+
+@media screen and (max-width: 960px) {
+    .department-nav {
+        display: none;
+    }
+}

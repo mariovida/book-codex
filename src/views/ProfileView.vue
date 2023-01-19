@@ -44,7 +44,7 @@
 
     <section v-if="showFirst && $store.state.displayName=='Administrator'" class="add-book">
         <div class="wrapper">
-            <h1>Dodaj knjigu</h1>
+            <h1>Dodavanje knjige</h1>
             <form data-aos="fade-up" data-aos-duration="800">
                 <input v-model="name" type="text" placeholder="Naziv knjige" required />
                 <input v-model="author" type="text" placeholder="Autor" required />
@@ -70,27 +70,28 @@
 
     <section  v-if="showSecond" class="add-news">
         <div class="wrapper">
-            <h1>Dodaj vijest</h1>
+            <h1>Dodavanje novosti</h1>
             <form data-aos="fade-up" data-aos-duration="800">
                 <input v-model="title" type="text" placeholder="Naslov" required />
                 <textarea v-model="content" type="textarea" placeholder="Sadržaj" required></textarea>
 
-                <button type="submit" @click="addNews()">Dodaj knjigu</button>
+                <button type="submit" @click="addNews()">Dodaj novost</button>
             </form>
         </div>
     </section>
 
     <section  v-if="showThird" class="show-reservations">
         <div class="wrapper">
-        <div v-for="(reserve, count) in reservations" :key="reserve.user" class="single-reservation">
-            <div class="reservation-counter">{{ count + 1 }}</div>
-            <div class="reservation-info" style="border-radius:8px">
-                <p><b>NASLOV KNJIGE:</b> {{ reserve.name }}</p>
-                <p><b>ISBN:</b> {{ reserve.isbn }}</p>
-                <p><b>ISKAZNICA:</b> {{ reserve.user }}</p>
+            <h1>Pregled rezervacija</h1>
+            <div v-for="(reserve, count) in reservations" :key="reserve.user" class="single-reservation" data-aos="fade-up" data-aos-duration="800">
+                <div class="reservation-counter">{{ count + 1 }}</div>
+                <div class="reservation-info" style="border-radius:8px">
+                    <p><b>NASLOV KNJIGE:</b> {{ reserve.name }}</p>
+                    <p><b>ISBN:</b> {{ reserve.isbn }}</p>
+                    <p><b>ISKAZNICA:</b> {{ reserve.user }}</p>
+                </div>
+                <div class="reservation-delete-admin" @click="deleteAlert(reserve.bookId, reserve.id)">X</div>
             </div>
-            <div class="reservation-delete-admin" @click="deleteAlert(reserve.bookId, reserve.id)">X</div>
-        </div>
         </div>
     </section>
         
