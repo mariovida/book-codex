@@ -216,7 +216,7 @@
     }
     .book-desc {
         margin-top: 8px;
-        font-size: 14px;
+        font-size: 12px;
     }
     .book-row-info button {
         width: 120px;
@@ -224,7 +224,7 @@
         margin-top: 12px;
     }
     .inventory {
-        padding-left: 0;
+        display: none;
     }
     .book {
         padding-top: 0;

@@ -29,7 +29,7 @@
     padding-bottom: 18px;
 }
 .qr-code {
-    max-width: 100%;
+    max-width: 90%;
     aspect-ratio: 1 / 1; 
     display: none;
     flex-direction: column;
@@ -53,6 +53,32 @@
     padding-top: 60px;
     font-size: 1.2rem;
     color: #333;
+}
+.reservations h3 {
+    margin-bottom: 46px;
+}
+.single-reservation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+}
+.reservation-counter {
+    position: absolute;
+    top: -20px;
+    background-color: #C14E2E;
+    color: #FFFFFF;
+    font-size: 21px;
+    padding: 8px 16px;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+.reservation-info {
+    background-color: #FFFFFF;
+    padding: 18px 24px;
+    margin-left: 32px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
 }
 .admin-buttons {
     min-height: auto;
