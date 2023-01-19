@@ -15,8 +15,11 @@
     <section class="reservations" v-if="$store.state.displayName!='Administrator'">
         <div class="wrapper">
             <h3 v-if="book in books != null">Vaše rezervacije:</h3>
-            <div v-for="book in books" :key="book.code">
-                <p>{{ book.bookName }}</p>
+            <div v-for="book in books" :key="book.code" class="single-reservation">
+                <div class="reservation-counter">2</div>
+                <div class="reservation-info">
+                    <p>{{ book.bookName }}</p>
+                </div>
             </div>
         </div>
     </section>
@@ -85,7 +88,8 @@ export default {
                 { value: 'Meki uvez', text: 'Meki uvez' },
                 { value: 'Tvrdi uvez', text: 'Tvrdi uvez' }
             ],
-            uvez: 'Meki uvez'
+            uvez: 'Meki uvez',
+            count: 0,
         };
     },
     components: {

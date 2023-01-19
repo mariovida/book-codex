@@ -103,7 +103,7 @@
       <div class="news-single" v-for="item in news" :key="item.id">
         <div class="news-image"><img src="news.jpg" /></div>
         <div class="news-info">
-          <p class="news-info__time">{{ this.fullDate }} - {{ this.fullTime  }}</p>
+          <p class="news-info__time">{{ item.date }} - {{ item.time  }}</p>
           <p class="news-info__title">{{ item.title }}</p>
           <p class="news-info__content">{{ item.content }}</p>
         </div>
@@ -151,8 +151,8 @@ export default {
         date: doc.data().date,
       }
       const dater = new Date(item.date.seconds*1000)
-      this.fullDate = dater.toLocaleDateString('de-DE');
-      this.fullTime = dater.toLocaleTimeString('de-DE')
+      item.date = dater.toLocaleDateString('de-DE')
+      item.time = dater.toLocaleTimeString('de-DE')
       allNews.push(item)
     })
     this.news = allNews;
