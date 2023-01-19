@@ -5,18 +5,9 @@
             <h1>Katalog</h1>
         </div>
     </section>
+
     <section class="catalog">
         <div class="wrapper">
-
-          
-                <!--<div>
-                    <h3>Što je u Katalogu?</h3>
-                    <p>Katalog sadrži: Bibliografske zapise obogaćene sadržajem: anotacijom, slikom omota ili naslovnice, glazbenim isječkom auditivne građe.</p>
-                    <h3>Pretraživanje</h3>
-                    <p>Upisivanjem u polje za pretragu pokreće se pretraživanje i ispisuju se rezultati.</p>
-                    <p>Unošenjem riječi u polje za upit tražit će se bibliografski zapisi u kojima se nalaze sve upisane riječi. Jednostavno pretraživanje postavljeno je za osnovno, početno pretraživanje cijelog sadržaja Kataloga.</p>
-                </div>-->
-              
             <div class="catalog-cat">
                 <button @click="resetFilter">Prikaži sve</button>
                 <button v-for="items in filterCategories" :key="items.vrsta" @click="filterByCategory(items.vrsta)">{{ items.vrsta }}</button>
@@ -63,7 +54,7 @@
             </div>
         </a>
 
-        <button class="load-more" @click="loadMore">Učitaj još</button>
+        <!-- <button class="load-more" @click="loadMore">Učitaj još</button> -->
     </section>
 
     <!-- <Footer></Footer> -->
@@ -100,8 +91,7 @@ export default {
             modules: [Navigation, Pagination, Autoplay],
         };
     },
-    async created() {
-        
+    async created() { 
         const querySnapshot = await getDocs(collection(db, "books"));
         let fbBooks = []
         querySnapshot.forEach((doc) => {

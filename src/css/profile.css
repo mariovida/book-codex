@@ -175,6 +175,7 @@
     padding: 4px 10px;
     border: 0;
     border: 1px solid #C14E2E;
+    background-color: transparent;
 }
 /* Chrome, Safari, Edge, Opera */
 .add-book form input::-webkit-outer-spin-button, .add-book form input::-webkit-inner-spin-button {
@@ -188,6 +189,7 @@
 }
 .add-book form input:focus, .add-book form select:focus, .add-news form input:focus, .add-news form textarea:focus {
     outline: 0;
+    background-color: #D9D9D9;
 }
 .add-book form button, .add-news form button {
     max-width: 200px;
@@ -211,6 +213,7 @@
 .add-news form input, .add-news form textarea, .add-news form button {
     width: 500px;
     margin-bottom: 20px;
+    padding: 12px;
 }
 .add-news form textarea {
     min-height: 300px;

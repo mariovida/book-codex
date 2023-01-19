@@ -9,8 +9,9 @@
         <p class="book-author">{{item.author}}</p>
         <span v-for="n in 5" :key="n" class="fa fa-star stars" :class="{ filled: n <= item.ocjena }"></span>
         <p class="book-desc">{{item.desc}}</p>
-        <button v-if="$store.state.user && this.checked == false && $store.state.displayName != 'Administrator'" @click="showAlert(item.id, item.stanje, item.isbn)">Rezerviraj</button>
+        <button v-if="$store.state.user && this.checked == false && $store.state.displayName != 'Administrator' && this.stanje > 0" @click="showAlert(item.id, item.stanje, item.isbn)">Rezerviraj</button>
         <button v-if="$store.state.user && this.checked == true" class="tooltip" disabled>Rezerviraj<span class="tooltiptext">Već ste rezervirali ovu knjigu.</span></button>
+        <button v-if="$store.state.user && this.checked == false && this.stanje == 0" class="tooltip" disabled>Rezerviraj<span class="tooltiptext">Knjiga trenutno nije dostupna.</span></button>
       </div>
     </div>
   </section>
@@ -63,6 +64,7 @@ export default {
       userId: null,
       bookCode: null,
       bookName: null,
+      stanje: null,
     };
   },
   async created() {
@@ -90,6 +92,7 @@ export default {
       this.cat = item.vrsta
       this.bookCode = item.isbn
       this.bookName = item.name
+      this.stanje = item.stanje
       document.title = this.bookName + " - Knjižnica Codex";
     })
     this.items = fbBooks;
