@@ -32,7 +32,7 @@
     <router-link to="/katalog" @click="showMenu = !showMenu; toggleNav()">KATALOG</router-link>
     <router-link to="/prijava" v-if="!$store.state.user" @click="showMenu = !showMenu; toggleNav()" class="login-btn">PRIJAVA</router-link>
     <router-link v-if="$store.state.user" to="/profil" @click="showMenu = !showMenu; toggleNav()">PROFIL</router-link>
-    <a v-if="$store.state.user" @click="$store.dispatch('logout')">ODJAVA</a>
+    <a v-if="$store.state.user" @click="$store.dispatch('logout'); showMenu = !showMenu; toggleNav()">ODJAVA</a>
 	</div>
 </template>
 

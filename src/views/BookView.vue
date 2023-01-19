@@ -144,7 +144,6 @@ export default {
             'Knjiga je rezervirana.',
             'success'
           );
-        
         }
       })
     },

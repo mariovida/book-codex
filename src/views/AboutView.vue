@@ -45,7 +45,7 @@
               slidesPerGroup: 1,
             },
             '1620': {
-              slidesPerView: 4.5,
+              slidesPerView: 4.1,
               slidesPerGroup: 1,
               spaceBetween: 20,
             },

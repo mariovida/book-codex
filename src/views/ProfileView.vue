@@ -8,23 +8,37 @@
     </section>
 
     <div class="qr-code" v-if="$store.state.displayName!='Administrator'">
-        <qrcode-vue v-if="count" :value="count" :size="size" level="Q" foreground="#C14E2E" background="#FFFFFF" :render-as="svg" :margin=2 id="mycanvas" style="border-radius:8px;"/>
+        <p>Vaša digitalna iskaznica s kojom ostvarujete pogodnosti u našoj knjižnici.</p>
+        <qrcode-vue :size="size" level="Q" foreground="#C14E2E" background="#FFFFFF" :render-as="svg" :margin=2 id="mycanvas" style="border-radius:8px;"/>
         <p>{{ count }}</p>
     </div>
 
     <section class="reservations" v-if="$store.state.displayName!='Administrator'">
         <div class="wrapper">
-            <h3 v-if="book in books != null">Vaše rezervacije:</h3>
-            <div v-for="book in books" :key="book.code">
-                <p>{{ book.bookName }}</p>
+            <div class="reservations-list">
+                <h3 v-if="book in books != null">Vaše trenutne rezervacije:</h3>
+                <div v-for="(book, count) in books" :key="book.code" class="single-reservation">
+                    <div class="reservation-counter">{{ count + 1 }}</div>
+                    <div class="reservation-info">
+                        <p>{{ book.bookName }}</p>
+                    </div>
+                    <div class="reservation-delete" @click="deleteAlert(book.bookId, book.id)">X</div>
+                </div>
+            </div>
+
+            <div class="reservations-status" v-if="$store.state.displayName!='Administrator'">
+                <p>Vaša digitalna iskaznica s kojom ostvarujete pogodnosti u našoj knjižnici.</p>
+                <qrcode-vue :size="size" level="Q" foreground="#C14E2E" background="#FFFFFF" :render-as="svg" :margin=2 id="mycanvas" style="border-radius:8px;"/>
+                <p class="reservations-status-info">Broj rezervacija: {{ this.count }}</p>
             </div>
         </div>
     </section>
 
     <section class="admin-buttons" v-if="$store.state.displayName=='Administrator'">
         <div class="wrapper">
-            <button v-on:click="showFirst = true">Dodavanje knjige</button>
-            <button v-on:click="showFirst = false">Dodavanje novosti</button>
+            <button v-on:click="showFirst = true, showSecond = false, showThird = false">Dodavanje knjige</button>
+            <button v-on:click="showFirst = false, showSecond = true, showThird = false">Dodavanje novosti</button>
+            <button v-on:click="showFirst = false, showSecond = false, showThird = true">Pregled rezervacija</button>
         </div>
     </section>
 
@@ -54,7 +68,7 @@
         </div>
     </section>
 
-    <section  v-if="!showFirst" class="add-news">
+    <section  v-if="showSecond" class="add-news">
         <div class="wrapper">
             <h1>Dodaj vijest</h1>
             <form data-aos="fade-up" data-aos-duration="800">
@@ -65,6 +79,20 @@
             </form>
         </div>
     </section>
+
+    <section  v-if="showThird" class="show-reservations">
+        <div class="wrapper">
+        <div v-for="(reserve, count) in reservations" :key="reserve.user" class="single-reservation">
+            <div class="reservation-counter">{{ count + 1 }}</div>
+            <div class="reservation-info" style="border-radius:8px">
+                <p><b>NASLOV KNJIGE:</b> {{ reserve.name }}</p>
+                <p><b>ISBN:</b> {{ reserve.isbn }}</p>
+                <p><b>ISKAZNICA:</b> {{ reserve.user }}</p>
+            </div>
+            <div class="reservation-delete-admin" @click="deleteAlert(reserve.bookId, reserve.id)">X</div>
+        </div>
+        </div>
+    </section>
         
     <Footer></Footer>
 </template>
@@ -72,7 +100,8 @@
 <script>
 import QrcodeVue from 'qrcode.vue'
 import { db } from "@/firebase";
-import { doc, query, collection, where, addDoc, setDoc, getDocs, serverTimestamp  } from "firebase/firestore";
+import { doc, query, collection, where, updateDoc, setDoc, getDocs, deleteDoc, serverTimestamp, increment } from "firebase/firestore";
+import Swal from 'sweetalert2';
 import Footer from '@/components/Footer.vue';
 
 export default {
@@ -80,12 +109,16 @@ export default {
         return {
             size: 250,
             books: [],
+            reservations: [],
             showFirst: true,
+            showSecond: false,
+            showThird: false,
             options: [
                 { value: 'Meki uvez', text: 'Meki uvez' },
                 { value: 'Tvrdi uvez', text: 'Tvrdi uvez' }
             ],
-            uvez: 'Meki uvez'
+            uvez: 'Meki uvez',
+            count: 0,
         };
     },
     components: {
@@ -96,24 +129,51 @@ export default {
         const userId = this.$store.state.uidValue;
         const querySnapshot = await getDocs(query(collection(db, "users"), where("user", "==", userId)));
         const allBooks = await getDocs(collection(db, "books"));
+        const allReservations = await getDocs(collection(db, "users"));
 
         let reservations = []
+        let allReserve = []
 
         querySnapshot.forEach((doc) => {
             const item = {
+                id: doc.id,
                 isbn: doc.data().value,
             }
             allBooks.forEach((doc) => {
                 const book = {
+                    id: item.id,
+                    bookId: doc.id,
                     code: doc.data().isbn,
                     bookName: doc.data().name,
                 }
                 if(book.code == item.isbn) {
                     reservations.push(book)
+                    this.count = this.count + 1;
                 }
             })
             this.books = reservations;
         })
+        allReservations.forEach((doc) => {
+            const reserve = {
+                id: doc.id,
+                user: doc.data().user,
+                isbn: doc.data().value,
+            }
+            allBooks.forEach((doc) => {
+                const book = {
+                    id: reserve.id,
+                    bookId: doc.id,
+                    code: doc.data().isbn,
+                    bookName: doc.data().name,
+                }
+                if(book.code == reserve.isbn) {
+                    reserve.name = book.bookName;
+                    reserve.bookId = book.bookId;
+                }
+            })
+            allReserve.push(reserve)
+        })
+        this.reservations = allReserve;
     },
     computed: {
         count() {
@@ -154,6 +214,38 @@ export default {
                 console.error(error)
             }
         },
+        deleteAlert(bookId, id) {
+            Swal.fire({
+                title: 'Jeste li sigurni?',
+                text: "Želite li otkazati ovu rezervaciju?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#CF5330',
+                cancelButtonColor: '#B3B3B3',
+                cancelButtonText: 'Prekid',
+                confirmButtonText: 'Da, otkaži!'
+            }).then((result) => {
+                if (result.value) {
+                this.deleteReservation(bookId, id)
+                Swal.fire(
+                    'Rezervacija je otkazana!',
+                    'Stranica će se osvježiti za 5 sekundi.',
+                    'success'
+                );
+                
+                }
+            })
+            },
+            async deleteReservation(bookId, id) {
+                await updateDoc(doc(db, "books", bookId), {
+                    stanje: increment(1)
+                });
+
+                await deleteDoc(doc(db, "users", id));
+                setTimeout(function(){
+                    window.location.reload();
+                }, 4000);
+            },
     }
 }
 </script>

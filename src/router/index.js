@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import DepartmentsView from "../views/DepartmentsView.vue";
-import DepartmentView from "../views/DepartmentView.vue";
+import KidsView from "../views/KidsView.vue";
+import GrownView from "../views/GrownView.vue";
+import MusicView from "../views/MusicView.vue";
 import ProgramsView from "../views/ProgramsView.vue";
 import CatalogView from "../views/CatalogView.vue";
 import LoginView from "../views/LoginView.vue";
@@ -28,10 +30,25 @@ const routes = [
     name: 'Odjeli - Knjižnica Codex',
     component: DepartmentsView
   },
+  // {
+  //   path: '/odjeli/:id',
+  //   name: '',
+  //   component: DepartmentView
+  // },
   {
-    path: '/odjeli/:id',
-    name: '',
-    component: DepartmentView
+    path: '/odjeli/djecji',
+    name: 'Dječji odjel - Knjižnica Codex',
+    component: KidsView
+  },
+  {
+    path: '/odjeli/odrasli',
+    name: 'Odjel za odrasle - Knjižnica Codex',
+    component: GrownView
+  },
+  {
+    path: '/odjeli/glazbeni',
+    name: 'Glazbeni odjel - Knjižnica Codex',
+    component: MusicView
   },
   {
     path: '/programi',

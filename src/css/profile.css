@@ -29,13 +29,14 @@
     padding-bottom: 18px;
 }
 .qr-code {
-    max-width: 100%;
+    max-width: 90%;
     aspect-ratio: 1 / 1; 
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: auto;
+    text-align: center;
     border-radius: 8px;
     background-color: #C14E2E;
     padding: 20px;
@@ -43,9 +44,10 @@
 }
 .qr-code p {
     margin-top: 16px;
+    margin-bottom: 16px;
     color: #FFFFFF;
 }
-.reservations, .admin-buttons, .add-book, .add-news {
+.reservations, .admin-buttons, .add-book, .add-news, .show-reservations {
     position: relative;
     max-width: 1920px;
     min-height: 80vh;
@@ -54,6 +56,88 @@
     font-size: 1.2rem;
     color: #333;
 }
+.reservations h3 {
+    margin-bottom: 52px;
+}
+.reservations-list {
+    float: left;
+    width: 73%;
+    padding: 24px;
+}
+.reservations-status {
+    float: left;
+    width: 25%;
+    min-height: 100px;
+    height: auto;
+    text-align: center;
+    margin-left: 2%;
+    padding: 24px;
+    background-color: #C14E2E;
+    border-radius: 8px;
+}
+.reservations-status p {
+    color: #FFFFFF;
+}
+.reservations-status-info {
+    font-size: 21px;
+    margin-top: 24px;
+}
+.reservations-status canvas {
+    margin: 16px 0;
+}
+.single-reservation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 42px;
+}
+.reservation-counter {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -20px;
+    background-color: #C14E2E;
+    color: #FFFFFF;
+    font-size: 21px;
+    text-align: center;
+    padding: 8px 16px;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+.reservation-info {
+    min-width: 400px;
+    background-color: #FFFFFF;
+    padding: 18px 32px;
+    margin-left: 32px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 10px;
+}
+.reservation-info p {
+    font-size: 18px;
+}
+.reservation-delete, .reservation-delete-admin {
+    margin-left: -3px;
+    padding: 18px 26px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #eb4747;
+    color: #FFFFFF;
+    font-size: 19px;
+    box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.reservation-delete-admin {
+    margin-top: -112px;
+    margin-left: -24px;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+.reservation-delete:hover {
+    background-color: #e83030;
+}
+
 .admin-buttons {
     min-height: auto;
 }
@@ -64,6 +148,7 @@
     border-bottom: 2px solid #C14E2E;
     padding: 6px 8px;
     margin-right: 18px;
+    margin-bottom: 18px;
     cursor: pointer;
 }
 .admin-buttons button:hover {
@@ -124,12 +209,31 @@
     min-height: 300px;
 }
 
+@media screen and (max-width: 1280px) {
+    .reservation-info {
+        min-width: auto;
+    }
+    .reservations-list {
+        width: 50%;
+    }
+    .reservation-delete {
+        margin-left: -1px;
+        padding: 16px 21px;
+        font-size: 18px;
+    }
+    .reservations-status {
+        width: 45%;
+    }
+}
 @media screen and (max-width: 960px) {
     .add-book form {
         width: 100%;
     }
     .add-news form {
         margin-top: 30px;
+    }
+    .reservation-info p {
+        font-size: 16px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -146,7 +250,6 @@
     }
     .reservations, .admin-buttons, .add-book, .add-news {
         padding-top: 30px;
-        min-height: auto;
     }
     .admin-buttons button {
         font-size: 14px;
@@ -173,5 +276,47 @@
     /* DODAVANJE VIJESTI */
     .add-news form input, .add-news form textarea, .add-news form button {
         width: 100%;
+    }
+
+    .reservation-counter {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+        padding: 8px;
+    }
+    .reservation-info {
+        min-width: auto;
+        max-width: 100%;
+        background-color: #FFFFFF;
+        padding-left: 24px;
+        margin-left: 32px;
+        border-radius: 8px;
+    }
+    .reservation-info p {
+        font-size: 14px;
+    }
+    .reservation-delete {
+        position: absolute;
+        right: -16px;
+        top: -20px;
+        padding: 8px 14px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    .reservation-delete-admin {
+        margin-left: -18px;
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+    .reservation-info {
+        min-width: auto;
+        max-width: 100%;
+        width: 100%;
+    }
+    .reservations-list {
+        width: 100%;
+    }
+    .reservations-status {
+        display: none;
     }
 }

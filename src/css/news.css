@@ -14,6 +14,7 @@
     height: 210px;
     margin-top: 30px;
     border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
 }
 .news-image {
     float: left;

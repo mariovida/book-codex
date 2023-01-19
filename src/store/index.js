@@ -102,7 +102,7 @@ export default createStore({
         return
       }
 
-      //commit('SET_USER', auth.currentUser)
+      commit('SET_USER', auth.currentUser)
       commit('CLEAR_USER')
       router.push('/')
     },
