@@ -176,6 +176,7 @@
     border: 0;
     border: 1px solid #C14E2E;
     background-color: transparent;
+    border-radius: 4px;
 }
 /* Chrome, Safari, Edge, Opera */
 .add-book form input::-webkit-outer-spin-button, .add-book form input::-webkit-inner-spin-button {
@@ -186,6 +187,29 @@
 .add-book form input[type=number] {
     -moz-appearance: textfield;
     width: 45%;
+}
+.upload-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    font-size: 16px;
+    padding: 6px 0;
+    text-align: center;
+    background-color: #C14E2E;
+    color: #F2F2F2;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.upload-label img {
+    width: 17px;
+    height: 17px;
+    margin-right: 6px;
+}
+#upload-photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
 }
 .add-book form input:focus, .add-book form select:focus, .add-news form input:focus, .add-news form textarea:focus {
     outline: 0;
@@ -199,6 +223,7 @@
     border: 0;
     color: #E6E6E6;
     background-color: #C14E2E;
+    border-radius: 4px;
     font-size: 16px;
     padding: 8px 24px;
     cursor: pointer;
