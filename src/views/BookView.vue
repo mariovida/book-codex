@@ -1,8 +1,15 @@
 <template>
-  <a href="/katalog" class="book-back"><i class="fa-regular fa-left-long"></i> Katalog</a>
+  <div class="book-back">
+    <a href="/">Knjižnica Codex</a>
+    <a>></a>
+    <a href="/katalog">Katalog</a>
+    <a>></a>
+    <a href="" v-for="item in items">{{ item.name }}</a>
+  </div>
+
   <section class="book-row">
     <div class="wrapper-text">
-      <img v-for="item in items" :key="item.id" v-bind:src="'/'+item.cover" v-bind:alt="item.name" data-aos="fade-up" data-aos-duration="800" />
+      <img v-for="item in items" :key="item.id" v-bind:src="this.imageUrl" v-bind:alt="item.name" data-aos="fade-up" data-aos-duration="800" />
       
       <div class="book-row-info" v-for="item in items" :key="item.id">
         <p class="book-name">{{item.name}}</p>
@@ -24,10 +31,24 @@
       <h3>Sažetak knjige</h3>
       <p>{{ item.desc }}</p>
       <h3>Detalji proizvoda</h3>
-      <p>Uvez: {{ item.uvez }}</p>
-      <p>Izdavač: {{ item.izdavac }}</p>
-      <p>Jezik: {{ item.jezik }}</p>
-      <p>ISBN: {{ item.isbn }}</p>
+      <table>
+        <tr>
+          <td>Uvez:</td>
+          <td>{{ item.uvez }}</td>
+        </tr>
+        <tr>
+          <td>Izdavač:</td>
+          <td>{{ item.izdavac }}</td>
+        </tr>
+        <tr>
+          <td>Jezik:</td>
+          <td>{{ item.jezik }}</td>
+        </tr>
+        <tr>
+          <td>ISBN:</td>
+          <td>{{ item.isbn }}</td>
+        </tr>
+      </table>
   </section>
 
   <div class="more-books-info"><p>Još iz iste kategorije</p><a href="/katalog">Katalog</a></div>
@@ -47,6 +68,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { db } from "@/firebase";
 import { doc, query, collection, where, addDoc, setDoc, getDocs, updateDoc, updateUser } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import 'firebase/storage';
 import Footer from '@/components/Footer.vue';
 
 export default {
@@ -65,6 +88,7 @@ export default {
       bookCode: null,
       bookName: null,
       stanje: null,
+      imageUrl: null,
     };
   },
   async created() {
@@ -93,6 +117,12 @@ export default {
       this.bookCode = item.isbn
       this.bookName = item.name
       this.stanje = item.stanje
+      const storage = getStorage();
+      const storageRef = ref(storage, item.cover);
+      getDownloadURL(storageRef).then(url => {
+          console.log('Download URL', url)
+          this.imageUrl = url
+      })
       document.title = this.bookName + " - Knjižnica Codex";
     })
     this.items = fbBooks;

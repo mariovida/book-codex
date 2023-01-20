@@ -62,6 +62,7 @@
 
                 <input v-model="desc" type="text" placeholder="Sadržaj" required />
                 <input v-model="url" type="text" placeholder="URL" required />
+                <input v-on:change="imageUrl" type="file" ref="image" @change="uploadImage" style="width:800px" required/>
 
                 <button type="submit" @click="addBook()">Dodaj knjigu</button>
             </form>
@@ -74,6 +75,7 @@
             <form data-aos="fade-up" data-aos-duration="800">
                 <input v-model="title" type="text" placeholder="Naslov" required />
                 <textarea v-model="content" type="textarea" placeholder="Sadržaj" required></textarea>
+                <input v-model="url" type="text" placeholder="URL" required />
 
                 <button type="submit" @click="addNews()">Dodaj novost</button>
             </form>
@@ -102,6 +104,8 @@
 import QrcodeVue from 'qrcode.vue'
 import { db } from "@/firebase";
 import { doc, query, collection, where, updateDoc, setDoc, getDocs, deleteDoc, serverTimestamp, increment } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import 'firebase/storage';
 import Swal from 'sweetalert2';
 import Footer from '@/components/Footer.vue';
 
@@ -182,6 +186,16 @@ export default {
         }
     },
     methods: {
+        async uploadImage(e) {
+            const file = this.$refs.image.files[0]
+            const storage = getStorage();
+            if (file) {
+                const storageRef = ref(storage, 'books/' + file.name);
+                uploadBytes(storageRef, file).then((snapshot) => {
+                    console.log('Uploaded!');
+                });
+            }
+        },
         async addBook() {
             try {
                 const docRef = await setDoc(doc(db, "books", this.name), {
@@ -193,7 +207,7 @@ export default {
                     izdavac: this.izdavac,
                     jezik: this.jezik,
                     stanje: this.stanje,
-                    cover: "/books/"+this.isbn+".jpg",
+                    cover: "books/"+this.isbn+".jpg",
                     desc: this.desc,
                     id: null,
                     isbn: this.isbn,
@@ -210,6 +224,7 @@ export default {
                     title: this.title,
                     content: this.content,
                     date: serverTimestamp(),
+                    url: this.url
                 })
             } catch (error) {
                 console.error(error)
@@ -236,17 +251,17 @@ export default {
                 
                 }
             })
-            },
-            async deleteReservation(bookId, id) {
-                await updateDoc(doc(db, "books", bookId), {
-                    stanje: increment(1)
-                });
+        },
+        async deleteReservation(bookId, id) {
+            await updateDoc(doc(db, "books", bookId), {
+                stanje: increment(1)
+            });
 
-                await deleteDoc(doc(db, "users", id));
-                setTimeout(function(){
-                    window.location.reload();
-                }, 4000);
-            },
+            await deleteDoc(doc(db, "users", id));
+            setTimeout(function(){
+                window.location.reload();
+            }, 4000);
+        },
     }
 }
 </script>

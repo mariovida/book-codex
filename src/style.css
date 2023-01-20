@@ -13,6 +13,7 @@
 @import "css/catalog.css";
 @import "css/book.css";
 @import "css/programs.css";
+@import "css/single-news.css";
 
 * {
     scroll-behavior: smooth;

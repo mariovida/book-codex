@@ -12,6 +12,8 @@ import RegisterView from "../views/RegisterView.vue";
 import ProfileView from "../views/ProfileView.vue";
 import BookView from "../views/BookView.vue";
 import AddBookView from "../views/AddBookView.vue";
+import NewsView from "../views/NewsView.vue";
+import AllNews from "../views/AllNews.vue";
 import { auth } from '@/firebase';
 
 const routes = [
@@ -47,7 +49,7 @@ const routes = [
   },
   {
     path: '/odjeli/glazbeni',
-    name: 'Glazbeni odjel - Knjižnica Codex',
+    name: 'Glazbena zbirka - Knjižnica Codex',
     component: MusicView
   },
   {
@@ -70,13 +72,23 @@ const routes = [
   },
   {
     path: '/knjiga/:id',
-    name: 'Knjiga',
+    name: 'Knjiga - Knjižnica Codex',
     component: BookView
   },
   {
     path: '/dodaj',
     name: 'Dodaj',
     component: AddBookView
+  },
+  {
+    path: '/novosti',
+    name: 'Novosti - Knjižnica Codex',
+    component: AllNews
+  },
+  {
+    path: '/novosti/:id',
+    name: '',
+    component: NewsView
   },
   {
     path: '/registracija',

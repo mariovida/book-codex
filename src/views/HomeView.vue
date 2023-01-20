@@ -100,14 +100,15 @@
       <h1>Novosti</h1>
       <p>Na stranici Knjižnice Codex se obično objavljuju informacije o novim knjigama koje su stigle u knjižnicu, predstojećim događajima poput predstavljanja knjiga i radionica, te rasporedima rada knjižnice. Također, mogu se naći i preporuke za knjige, informacije o online izdanjima i e-knjigama te razne druge vijesti vezane za knjižnicu.</p>
       <p>Na stranici se mogu pronaći i informacije o izdavačkim kućama, nagradama za knjige, autorskim čitanjima, kao i informacije o knjižničarima i knjižničarskim uslugama. Također, mogu se naći i recenzije knjiga, informacije o književnim klubovima i čitaonicama, kao i informacije o dostupnosti knjiga za iznajmljivanje ili kupnju.</p>
-      <div class="news-single" v-for="item in news" :key="item.id">
+      <a v-bind:href="item.url" class="news-single" v-for="item in news" :key="item.id">
         <div class="news-image"><img src="news.jpg" /></div>
         <div class="news-info">
           <p class="news-info__time">{{ item.date }} - {{ item.time  }}</p>
           <p class="news-info__title">{{ item.title }}</p>
           <p class="news-info__content">{{ item.content }}</p>
+          <p class="news-info__more">Pročitaj više</p>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -123,7 +124,7 @@ import 'swiper/swiper.min.css';
 import Footer from '@/components/Footer.vue';
 import Modal from '@/components/Login.vue'
 import { db } from "@/firebase";
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import { collection, getDocs, limit, query, orderBy } from "firebase/firestore";
 
 export default {
   name: 'HomeView',
@@ -142,13 +143,14 @@ export default {
     }
   },
   async created() {
-    const newsSnap = await getDocs(collection(db, "news"));
+    const newsSnap = await getDocs(query(collection(db, "news"), orderBy("date", "desc"), limit(3)));
     let allNews = []
     newsSnap.forEach((doc) => {
       const item = {
         title: doc.data().title,
         content: doc.data().content,
         date: doc.data().date,
+        url: "/novosti/"+doc.data().url,
       }
       const dater = new Date(item.date.seconds*1000)
       item.date = dater.toLocaleDateString('de-DE')

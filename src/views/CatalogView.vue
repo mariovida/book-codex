@@ -107,8 +107,6 @@ export default {
         fbBooks.push(item)
         })
         this.items = fbBooks;
-
-
     },
     computed: {
         filterCategories() {

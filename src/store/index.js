@@ -53,11 +53,9 @@ export default createStore({
       } catch (error) {
         switch(error.code) {
           case 'auth/user-not-found':
-            //alert("User not found")
             commit('NO_USER_ERROR')
             break
           case 'auth/wrong-password':
-            //alert("Wrong password")
             commit('PASSWORD_ERROR')
             break
           default:
@@ -84,15 +82,12 @@ export default createStore({
       } catch (error) {
         switch(error.code) {
           case 'auth/email-already-in-use':
-            // alert("Unesena e-mail adresa se već koristi!")
             commit('SET_USED_MAIL_ERROR')
             break
           case 'auth/invalid-email':
-            //alert("Neispravna e-mail adresa!")
             commit('SET_INVALID_MAIL_ERROR')
             break
           case 'auth/weak-password':
-            //alert("Slaba lozinka!")
             commit('SET_WEAK_PASS_ERROR')
             break
           default:
