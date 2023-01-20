@@ -54,7 +54,7 @@
   <div class="more-books-info"><p>Još iz iste kategorije</p><a href="/katalog">Katalog</a></div>
   <section class="more-books">
     <a v-for="more in mores.slice(0, 5)" :key="more.id" v-bind:href="'/'+more.url">
-      <img v-if="more.cover" v-bind:src="'/'+more.cover" v-bind:alt="more.name" />
+      <img v-if="more.cover" v-bind:src="more.cover" v-bind:alt="more.name" />
       <p>{{ more.name }}</p>
       <p>{{ more.author }}</p>
     </a>
@@ -146,7 +146,7 @@ export default {
     const moreBooks = []
     bookSnap.forEach((doc) => {
       const more = {
-        cover: doc.data().cover,
+        cover: doc.data().coverImg,
         name: doc.data().name,
         author: doc.data().author,
         url: doc.data().url,

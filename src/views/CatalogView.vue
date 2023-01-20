@@ -43,7 +43,7 @@
             <p>Provjerite jeste li upisali točan naziv i pokušajte ponovno.</p>
         </div>-->
 
-        <a v-bind:href="item.url" v-if="!selectedCategory && !searchTerm" v-for="item in items" class="catalog-item" data-aos="fade-up" data-aos-duration="700">
+        <a v-bind:href="item.url" v-if="!selectedCategory && !searchTerm" v-for="item in filteredItemsAll" class="catalog-item" data-aos="fade-up" data-aos-duration="700">
             <img v-if="item.coverImg" v-bind:src="item.coverImg" v-bind:alt="item.cover">
             <img v-if="!item.cover" src="/books/book-placeholder.png" />
             <div class="catalog-item-info">
