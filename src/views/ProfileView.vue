@@ -124,6 +124,7 @@ export default {
             ],
             uvez: 'Meki uvez',
             count: 0,
+            coverImgUrl: null,
         };
     },
     components: {
@@ -193,6 +194,10 @@ export default {
                 const storageRef = ref(storage, 'books/' + file.name);
                 uploadBytes(storageRef, file).then((snapshot) => {
                     console.log('Uploaded!');
+                    getDownloadURL(storageRef).then(url => {
+                        console.log('Download URL', url)
+                        this.coverImgUrl = url
+                    })
                 });
             }
         },
@@ -213,6 +218,7 @@ export default {
                     isbn: this.isbn,
                     ocjena: this.ocjena,
                     url: "knjiga/"+this.url,
+                    coverImg: this.coverImgUrl,
                 })
             } catch (error) {
                 console.error(error)
