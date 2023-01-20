@@ -20,7 +20,7 @@
     <h2 v-if="selectedCategory!='Knjiga za mlade'" class="category wrapper-text">{{ this.selectedCategory }}</h2>
     <section class="catalog-items wrapper">
         <a v-bind:href="item.url" v-if="selectedCategory && !searchTerm" v-for="item in filteredItems" :key="item.id" class="catalog-item" data-aos="fade-up" data-aos-duration="600"> 
-            <img v-bind:src="item.cover" v-bind:alt="item.name">
+            <img v-bind:src="item.coverImg" v-bind:alt="item.name">
             <div class="catalog-item-info">
                 <h3>{{ item.name }}</h3>
                 <p>{{ item.author }}</p>
@@ -30,7 +30,7 @@
         </a>
 
         <a v-bind:href="item.url" v-if="searchTerm" v-for="item in filteredItemsSearch" :key="item.id" class="catalog-item">
-            <img v-bind:src="item.cover" v-bind:alt="item.name">
+            <img v-bind:src="item.coverImg" v-bind:alt="item.name">
             <div class="catalog-item-info">
                 <h3>{{ item.name }}</h3>
                 <p>{{ item.author }}</p>
