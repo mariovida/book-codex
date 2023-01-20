@@ -62,7 +62,7 @@
 
                 <input v-model="desc" type="text" placeholder="Sadržaj" required />
                 <input v-model="url" type="text" placeholder="URL" required />
-                <input v-on:change="imageUrl" type="file" ref="image" @change="uploadImage" style="width:800px" required/>
+                <input v-on:change="imageUrl" type="file" ref="image" @change="uploadImage" required/>
 
                 <button type="submit" @click="addBook()">Dodaj knjigu</button>
             </form>
