@@ -14,9 +14,9 @@
     border-bottom: 1px solid #C14E2E;
 }
 .department-nav a {
-    padding: 6px 24px;
-    margin-right: 12px;
-    font-size: 18px;
+    padding: 5px 12px;
+    margin-right: 8px;
+    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 18px;
@@ -28,13 +28,33 @@
 .department-nav a:hover {
     outline: 1px solid #C14E2E;
 }
+.department-nav a:nth-child(1):hover {
+    outline: 0;
+}
 .department-nav a:nth-child(2):hover {
     outline: 0;
     cursor: default;
 }
+.department img {
+    width: 100%;
+    max-height: 800px;
+    margin-bottom: 16px;
+}
+.department .wrapper-text {
+    margin-top: 60px;
+}
+.department .wrapper-text p {
+    margin-bottom: 8px;
+}
 
-@media screen and (max-width: 960px) {
-    .department-nav {
-        display: none;
+@media screen and (max-width: 768px) {
+    .department-nav a {
+        display: block;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 12px;
+    }
+    .department-nav a:nth-child(1), .department-nav a:nth-child(2) {
+       display: none;
     }
 }
