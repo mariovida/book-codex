@@ -28,7 +28,7 @@
 
             <div class="reservations-status" v-if="$store.state.displayName!='Administrator'">
                 <p>Vaša digitalna iskaznica s kojom ostvarujete pogodnosti u našoj knjižnici.</p>
-                <qrcode-vue :size="size" level="Q" foreground="#C14E2E" background="#FFFFFF" :render-as="svg" :margin=2 id="mycanvas" style="border-radius:8px;"/>
+                <qrcode-vue :value="value" :size="size" level="Q" foreground="#C14E2E" background="#FFFFFF" :render-as="svg" :margin=2 id="mycanvas" style="border-radius:8px;"/>
                 <p class="reservations-status-info">Broj rezervacija: {{ this.count }}</p>
             </div>
         </div>
@@ -124,6 +124,7 @@ export default {
             ],
             uvez: 'Meki uvez',
             count: 0,
+            value: this.$store.state.uidValue,
             coverImgUrl: null,
         };
     },
