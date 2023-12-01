@@ -1,4 +1,4 @@
-# codex2
+<h1 align="center">Codex library</h1>
 
 ## Project setup
 ```
