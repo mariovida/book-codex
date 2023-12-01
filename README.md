@@ -1,4 +1,5 @@
-<h1 align="center">Codex library</h1>
+<h1 align="center">Codex</h1>
+<h2 align="center">Library Management System</h2>
 
 ## Project setup
 ```
