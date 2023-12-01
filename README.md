@@ -1,8 +1,10 @@
 <h1 align="center">Codex - Library Management System</h1>
 
-![alt text](screens/screen1.png)
+![Homepage](screens/screen1.png)
 
-![alt text](screens/screen2.png)
+![Catalogue page](screens/screen2.png)
+
+![Registration page](screens/screen3.png)
 
 ## Overview
 
