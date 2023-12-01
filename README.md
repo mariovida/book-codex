@@ -4,6 +4,8 @@
 
 ![Catalogue page](screens/screen2.png)
 
+![Single book page](screens/screen4.png)
+
 ![Registration page](screens/screen3.png)
 
 ## Overview
