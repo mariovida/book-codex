@@ -1,5 +1,9 @@
 <h1 align="center">Codex - Library Management System</h1>
 
+![alt text](screens/screen1.png)
+
+![alt text](screens/screen2.png)
+
 ## Overview
 
 Welcome to Codex, a library management system developed as a part of a college thesis. This project, built using Vue.js for the frontend and Firebase as the backend, aims to provide an efficient solution for managing library resources, handling reservations, and updating the library's website with the latest information.
